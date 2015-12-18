@@ -1,5 +1,6 @@
 import System.Environment (getArgs)
-import Data.Char (isAlpha)
+import Data.Char (isAlpha, toUpper)
+import qualified Data.Set as Set
 
 main :: IO ()
 main = do
@@ -11,7 +12,9 @@ main = do
 processInputFile :: FilePath -> IO ()
 processInputFile inputFile = do
         inputText <- readFile inputFile
-        let colorizedLines = map (linify . process) (lines inputText)
+        words1kText <- readFile "cocadb/basewrd01.txt"
+        let knownWordSet = Set.fromList (words words1kText)
+        let colorizedLines = map (linify . process knownWordSet) (lines inputText)
         putStrLn $ htmlize (unlines colorizedLines)
 
 linify :: String -> String
@@ -26,12 +29,6 @@ colorForTargetWords = "LightGreen"
 colorForUnknownWords :: String
 colorForUnknownWords = "DarkSalmon"
 
--- subtitle :: String
--- subtitle = "2\n00:06:26,193 --> 00:06:28,926\nI'll have a smoke outside,\nor I'll fall asleep.\n\"Son of a beach\" - said Kolya."
-
-wordsKnown :: [String]
-wordsKnown = ["one", "two", "have", "smoke", "outside", "said"]
-
 wordsTargeted :: [String]
 wordsTargeted = ["fall", "beach"]
 
@@ -44,18 +41,18 @@ skipWord = dropWhile isAlpha
 copyTillWord :: String -> String
 copyTillWord = takeWhile (not . isAlpha)
 
-process :: String -> String
-process [] = []
-process xs = colorize headWord ++ nonWordAfterHead ++ process tailWords
+process :: Set.Set String -> String -> String
+process _ [] = []
+process knownWordSet xs = colorize headWord knownWordSet ++ nonWordAfterHead ++ process knownWordSet tailWords
         where
                 headWord = popWord xs
                 nonWordAfterHead = copyTillWord $ skipWord xs
                 tailWords = drop (length headWord + length nonWordAfterHead) xs
 
-colorize :: String -> String
-colorize [] = []
-colorize xs
-        | xs `elem` wordsKnown = xs
+colorize :: String -> Set.Set String -> String
+colorize [] _ = []
+colorize xs knownWordSet
+        | map toUpper xs `elem` knownWordSet = xs
         | xs `elem` wordsTargeted = decorate xs colorForTargetWords
         | otherwise = decorate xs colorForUnknownWords
 

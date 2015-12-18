@@ -1,0 +1,767 @@
+
+
+
+
+
+For Mom,
+
+who calls me "Pickle,"
+
+and Dad,
+
+who calls me "Dude."
+
+
+
+
+
+Contents
+
+
+Cover
+
+Title Page
+
+Copyright
+
+Dedication
+
+Map
+
+Chapter 1
+
+Chapter 2
+
+Chapter 3
+
+Chapter 4
+
+Chapter 5
+
+Chapter 6
+
+Chapter 7
+
+Chapter 8
+
+Chapter 9
+
+Chapter 10
+
+Chapter 11
+
+Chapter 12
+
+Chapter 13
+
+Chapter 14
+
+Chapter 15
+
+Chapter 16
+
+Chapter 17
+
+Chapter 18
+
+Chapter 19
+
+Chapter 20
+
+Chapter 21
+
+Chapter 22
+
+Chapter 23
+
+Chapter 24
+
+Chapter 25
+
+Chapter 26
+
+
+
+
+
+CHAPTER 1
+
+
+
+
+
+LOG ENTRY: SOL 6
+
+I'm pretty much fucked.
+
+That's my considered opinion.
+
+Fucked.
+
+Six days into what should be the greatest two months of my life, and it's turned into a nightmare.
+
+I don't even know who'll read this. I guess someone will find it eventually. Maybe a hundred years from now.
+
+For the record...I didn't die on Sol 6. Certainly the rest of the crew thought I did, and I can't blame them. Maybe there'll be a day of national mourning for me, and my Wikipedia page will say, "Mark Watney is the only human being to have died on Mars."
+
+And it'll be right, probably. 'Cause I'll surely die here. Just not on Sol 6 when everyone thinks I did.
+
+Let's see...where do I begin?
+
+The Ares Program. Mankind reaching out to Mars to send people to another planet for the very first time and expand the horizons of humanity blah, blah, blah. The Ares 1 crew did their thing and came back heroes. They got the parades and fame and love of the world.
+
+
+
+Ares 2 did the same thing, in a different location on Mars. They got a firm handshake and a hot cup of coffee when they got home.
+
+Ares 3. Well, that was my mission. Okay, not mine per se. Commander Lewis was in charge. I was just one of her crew. Actually, I was the very lowest ranked member of the crew. I would only be "in command" of the mission if I were the only remaining person.
+
+What do you know? I'm in command.
+
+I wonder if this log will be recovered before the rest of the crew die of old age. I presume they got back to Earth all right. Guys, if you're reading this: It wasn't your fault. You did what you had to do. In your position I would have done the same thing. I don't blame you, and I'm glad you survived.
+
+I guess I should explain how Mars missions work, for any layman who may be reading this. We got to Earth orbit the normal way, through an ordinary ship to Hermes. All the Ares missions use Hermes to get to and from Mars. It's really big and cost a lot so NASA built only one.
+
+Once we got to Hermes, four additional unmanned missions brought us fuel and supplies while we prepared for our trip. Once everything was a go, we set out for Mars. But not very fast. Gone are the days of heavy chemical fuel burns and trans-Mars injection orbits.
+
+Hermes is powered by ion engines. They throw argon out the back of the ship really fast to get a tiny amount of acceleration. The thing is, it doesn't take much reactant mass, so a little argon (and a nuclear reactor to power things) let us accelerate constantly the whole way there. You'd be amazed at how fast you can get going with a tiny acceleration over a long time.
+
+I could regale you with tales of how we had great fun on the trip, but I won't. I don't feel like reliving it right now. Suffice it to say we got to Mars 124 days later without strangling each other.
+
+From there, we took the MDV (Mars descent vehicle) to the surface. The MDV is basically a big can with some light thrusters and parachutes attached. Its sole purpose is to get six humans from Mars orbit to the surface without killing any of them.
+
+
+
+And now we come to the real trick of Mars exploration: having all of our shit there in advance.
+
+A total of fourteen unmanned missions deposited everything we would need for surface operations. They tried their best to land all the supply vessels in the same general area, and did a reasonably good job. Supplies aren't nearly so fragile as humans and can hit the ground really hard. But they tend to bounce around a lot.
+
+Naturally, they didn't send us to Mars until they'd confirmed that all the supplies had made it to the surface and their containers weren't breached. Start to finish, including supply missions, a Mars mission takes about three years. In fact, there were Ares 3 supplies en route to Mars while the Ares 2 crew were on their way home.
+
+The most important piece of the advance supplies, of course, was the MAV. The Mars ascent vehicle. That was how we would get back to Hermes after surface operations were complete. The MAV was soft-landed (as opposed to the balloon bounce-fest the other supplies had). Of course, it was in constant communication with Houston, and if there had been any problems with it, we would have passed by Mars and gone home without ever landing.
+
+The MAV is pretty cool. Turns out, through a neat set of chemical reactions with the Martian atmosphere, for every kilogram of hydrogen you bring to Mars, you can make thirteen kilograms of fuel. It's a slow process, though. It takes twenty-four months to fill the tank. That's why they sent it long before we got here.
+
+You can imagine how disappointed I was when I discovered the MAV was gone.
+
+It was a ridiculous sequence of events that led to me almost dying, and an even more ridiculous sequence that led to me surviving.
+
+The mission is designed to handle sandstorm gusts up to 150 kph. So Houston got understandably nervous when we got whacked with 175 kph winds. We all got in our flight space suits and huddled in the middle of the Hab, just in case it lost pressure. But the Hab wasn't the problem.
+
+
+
+The MAV is a spaceship. It has a lot of delicate parts. It can put up with storms to a certain extent, but it can't just get sandblasted forever. After an hour and a half of sustained wind, NASA gave the order to abort. Nobody wanted to stop a monthlong mission after only six days, but if the MAV took any more punishment, we'd all have gotten stranded down there.
+
+We had to go out in the storm to get from the Hab to the MAV. That was going to be risky, but what choice did we have?
+
+Everyone made it but me.
+
+Our main communications dish, which relayed signals from the Hab to Hermes, acted like a parachute, getting torn from its foundation and carried with the torrent. Along the way, it crashed through the reception antenna array. Then one of those long thin antennae slammed into me end-first. It tore through my suit like a bullet through butter, and I felt the worst pain of my life as it ripped open my side. I vaguely remember having the wind knocked out of me (pulled out of me, really) and my ears popping painfully as the pressure of my suit escaped.
+
+The last thing I remember was seeing Johanssen hopelessly reaching out toward me.
+
+I awoke to the oxygen alarm in my suit. A steady, obnoxious beeping that eventually roused me from a deep and profound desire to just fucking die.
+
+The storm had abated; I was facedown, almost totally buried in sand. As I groggily came to, I wondered why I wasn't more dead.
+
+The antenna had enough force to punch through the suit and my side, but it had been stopped by my pelvis. So there was only one hole in the suit (and a hole in me, of course).
+
+
+
+I had been knocked back quite a ways and rolled down a steep hill. Somehow I landed facedown, which forced the antenna to a strongly oblique angle that put a lot of torque on the hole in the suit. It made a weak seal.
+
+Then, the copious blood from my wound trickled down toward the hole. As the blood reached the site of the breach, the water in it quickly evaporated from the airflow and low pressure, leaving a gunky residue behind. More blood came in behind it and was also reduced to gunk. Eventually, it sealed the gaps around the hole and reduced the leak to something the suit could counteract.
+
+The suit did its job admirably. Sensing the drop in pressure, it constantly flooded itself with air from my nitrogen tank to equalize. Once the leak became manageable, it only had to trickle new air in slowly to relieve the air lost.
+
+After a while, the CO2 (carbon dioxide) absorbers in the suit were expended. That's really the limiting factor to life support. Not the amount of oxygen you bring with you, but the amount of CO2 you can remove. In the Hab, I have the oxygenator, a large piece of equipment that breaks apart CO2 to give the oxygen back. But the space suits have to be portable, so they use a simple chemical absorption process with expendable filters. I'd been asleep long enough that my filters were useless.
+
+The suit saw this problem and moved into an emergency mode the engineers call "bloodletting." Having no way to separate out the CO2, the suit deliberately vented air to the Martian atmosphere, then backfilled with nitrogen. Between the breach and the bloodletting, it quickly ran out of nitrogen. All it had left was my oxygen tank.
+
+So it did the only thing it could to keep me alive. It started backfilling with pure oxygen. I now risked dying from oxygen toxicity, as the excessively high amount of oxygen threatened to burn up my nervous system, lungs, and eyes. An ironic death for someone with a leaky space suit: too much oxygen.
+
+Every step of the way would have had beeping alarms, alerts, and warnings. But it was the high-oxygen warning that woke me.
+
+
+
+The sheer volume of training for a space mission is astounding. I'd spent a week back on Earth practicing emergency space suit drills. I knew what to do.
+
+Carefully reaching to the side of my helmet, I got the breach kit. It's nothing more than a funnel with a valve at the small end and an unbelievably sticky resin on the wide end. The idea is you have the valve open and stick the wide end over a hole. The air can escape through the valve, so it doesn't interfere with the resin making a good seal. Then you close the valve, and you've sealed the breach.
+
+The tricky part was getting the antenna out of the way. I pulled it out as fast as I could, wincing as the sudden pressure drop dizzied me and made the wound in my side scream in agony.
+
+I got the breach kit over the hole and sealed it. It held. The suit backfilled the missing air with yet more oxygen. Checking my arm readouts, I saw the suit was now at 85 percent oxygen. For reference, Earth's atmosphere is about 21 percent. I'd be okay, so long as I didn't spend too much time like that.
+
+I stumbled up the hill back toward the Hab. As I crested the rise, I saw something that made me very happy and something that made me very sad: The Hab was intact (yay!) and the MAV was gone (boo!).
+
+Right that moment I knew I was screwed. But I didn't want to just die out on the surface. I limped back to the Hab and fumbled my way into an airlock. As soon as it equalized, I threw off my helmet.
+
+Once inside the Hab, I doffed the suit and got my first good look at the injury. It would need stitches. Fortunately, all of us had been trained in basic medical procedures, and the Hab had excellent medical supplies. A quick shot of local anesthetic, irrigate the wound, nine stitches, and I was done. I'd be taking antibiotics for a couple of weeks, but other than that I'd be fine.
+
+I knew it was hopeless, but I tried firing up the communications array. No signal, of course. The primary satellite dish had broken off, remember? And it took the reception antennae with it. The Hab had secondary and tertiary communications systems, but they were both just for talking to the MAV, which would use its much more powerful systems to relay to Hermes. Thing is, that only works if the MAV is still around.
+
+
+
+I had no way to talk to Hermes. In time, I could locate the dish out on the surface, but it would take weeks for me to rig up any repairs, and that would be too late. In an abort, Hermes would leave orbit within twenty-four hours. The orbital dynamics made the trip safer and shorter the earlier you left, so why wait?
+
+Checking out my suit, I saw the antenna had plowed through my bio-monitor computer. When on an EVA, all the crew's suits are networked so we can see each other's status. The rest of the crew would have seen the pressure in my suit drop to nearly zero, followed immediately by my bio-signs going flat. Add to that watching me tumble down a hill with a spear through me in the middle of a sandstorm...yeah. They thought I was dead. How could they not?
+
+They may have even had a brief discussion about recovering my body, but regulations are clear. In the event a crewman dies on Mars, he stays on Mars. Leaving his body behind reduces weight for the MAV on the trip back. That means more disposable fuel and a larger margin of error for the return thrust. No point in giving that up for sentimentality.
+
+So that's the situation. I'm stranded on Mars. I have no way to communicate with Hermes or Earth. Everyone thinks I'm dead. I'm in a Hab designed to last thirty-one days.
+
+If the oxygenator breaks down, I'll suffocate. If the water reclaimer breaks down, I'll die of thirst. If the Hab breaches, I'll just kind of explode. If none of those things happen, I'll eventually run out of food and starve to death.
+
+So yeah. I'm fucked.
+
+
+
+
+
+CHAPTER 2
+
+
+
+
+
+LOG ENTRY: SOL 7
+
+Okay, I've had a good night's sleep, and things don't seem as hopeless as they did yesterday.
+
+Today I took stock of supplies and did a quick EVA to check up on the external equipment. Here's my situation:
+
+The surface mission was supposed to be thirty-one days. For redundancy, the supply probes had enough food to last the whole crew fifty-six days. That way if one or two probes had problems, we'd still have enough food to complete the mission.
+
+We were six days in when all hell broke loose, so that leaves enough food to feed six people for fifty days. I'm just one guy, so it'll last me three hundred days. And that's if I don't ration it. So I've got a fair bit of time.
+
+I'm pretty flush on EVA suits, too. Each crew member had two space suits: a flight spacesuit to wear during descent and ascent, and the much bulkier and more robust EVA suit to wear when doing surface operations. My flight spacesuit has a hole in it, and of course the crew was wearing the other five when they returned to Hermes. But all six EVA suits are still here and in perfect condition.
+
+The Hab stood up to the storm without any problems. Outside, things aren't so rosy. I can't find the satellite dish. It probably got blown kilometers away.
+
+
+
+The MAV is gone, of course. My crewmates took it up to Hermes. Though the bottom half (the landing stage) is still here. No reason to take that back up when weight is the enemy. It includes the landing gear, the fuel plant, and anything else NASA figured it wouldn't need for the trip back up to orbit.
+
+The MDV is on its side and there's a breach in the hull. Looks like the storm ripped the cowling off the reserve chute (which we didn't have to use on landing). Once the chute was exposed, it dragged the MDV all over the place, smashing it against every rock in the area. Not that the MDV would be much use to me. Its thrusters can't even lift its own weight. But it might have been valuable for parts. Might still be.
+
+Both rovers are half-buried in sand, but they're in good shape otherwise. Their pressure seals are intact. Makes sense. Operating procedure when a storm hits is to stop motion and wait for the storm to pass. They're made to stand up to punishment. I'll be able to dig them out with a day or so of work.
+
+I've lost communication with the weather stations, placed a kilometer away from the Hab in four directions. They might be in perfect working order for all I know. The Hab's communications are so weak right now it probably can't even reach a kilometer.
+
+The solar cell array was covered in sand, rendering it useless (hint: solar cells need sunlight to make electricity). But once I swept the cells off, they returned to full efficiency. Whatever I end up doing, I'll have plenty of power for it. Two hundred square meters of solar cells, with hydrogen fuel cells to store plenty of reserve. All I need to do is sweep them off every few days.
+
+Things indoors are great, thanks to the Hab's sturdy design.
+
+I ran a full diagnostic on the oxygenator. Twice. It's perfect. If anything goes wrong with it, there's a short-term spare I can use. But it's solely for emergency use while repairing the main one. The spare doesn't actually pull CO2 apart and recapture the oxygen. It just absorbs the CO2 the same way the space suits do. It's intended to last five days before it saturates the filters, which means thirty days for me (just one person breathing, instead of six). So there's some insurance there.
+
+
+
+The water reclaimer is working fine, too. The bad news is there's no backup. If it stops working, I'll be drinking reserve water while I rig up a primitive distillery to boil piss. Also, I'll lose half a liter of water per day to breathing until the humidity in the Hab reaches its maximum and water starts condensing on every surface. Then I'll be licking the walls. Yay. Anyway, for now, no problems with the water reclaimer.
+
+So yeah. Food, water, shelter all taken care of. I'm going to start rationing food right now. Meals are pretty minimal already, but I think I can eat a three-fourths portion per meal and still be all right. That should turn my three hundred days of food into four hundred. Foraging around the medical area, I found the main bottle of vitamins. There's enough multivitamins there to last years. So I won't have any nutritional problems (though I'll still starve to death when I'm out of food, no matter how many vitamins I take).
+
+The medical area has morphine for emergencies. And there's enough there for a lethal dose. I'm not going to slowly starve to death, I'll tell you that. If I get to that point, I'll take an easier way out.
+
+Everyone on the mission had two specialties. I'm a botanist and mechanical engineer; basically, the mission's fix-it man who played with plants. The mechanical engineering might save my life if something breaks.
+
+I've been thinking about how to survive this. It's not completely hopeless. There'll be humans back on Mars in about four years when Ares 4 arrives (assuming they didn't cancel the program in the wake of my "death").
+
+Ares 4 will be landing at the Schiaparelli crater, which is about 3200 kilometers away from my location here in Acidalia Planitia. No way for me to get there on my own. But if I could communicate, I might be able to get a rescue. Not sure how they'd manage that with the resources on hand, but NASA has a lot of smart people.
+
+
+
+So that's my mission now. Find a way to communicate with Earth. If I can't manage that, find a way to communicate with Hermes when it returns in four years with the Ares 4 crew.
+
+Of course, I don't have any plan for surviving four years on one year of food. But one thing at a time here. For now, I'm well fed and have a purpose: Fix the damn radio.
+
+
+
+
+
+LOG ENTRY: SOL 10
+
+Well, I've done three EVAs and haven't found any hint of the communications dish.
+
+I dug out one of the rovers and had a good drive around, but after days of wandering, I think it's time to give up. The storm probably blew the dish far away and then erased any drag-marks or scuffs that might have led to a trail. Probably buried it, too.
+
+I spent most of today out at what's left of the communications array. It's really a sorry sight. I may as well yell toward Earth for all the good that damned thing will do me.
+
+I could throw together a rudimentary dish out of metal I find around the base, but this isn't some walkie-talkie I'm working with here. Communicating from Mars to Earth is a pretty big deal, and requires extremely specialized equipment. I won't be able to whip something up with tinfoil and gum.
+
+I need to ration my EVAs as well as food. The CO2 filters are not cleanable. Once they're saturated, they're done. The mission accounted for a four-hour EVA per crew member per day. Fortunately, CO2 filters are light and small, so NASA had the luxury of sending more than we needed. All told, I have about 1500 hours' worth of CO2 filters. After that, any EVAs I do will have to be managed with bloodletting the air.
+
+
+
+Fifteen hundred hours may sound like a lot, but I'm faced with spending at least four years here if I'm going to have any hope of rescue, with a minimum of several hours per week dedicated to sweeping off the solar array. Anyway. No needless EVAs.
+
+In other news, I'm starting to come up with an idea for food. My botany background may come in useful after all.
+
+Why bring a botanist to Mars? After all, it's famous for not having anything growing there. Well, the idea was to figure out how well things grow in Martian gravity, and see what, if anything, we can do with Martian soil. The short answer is: quite a lot...almost. Martian soil has the basic building blocks needed for plant growth, but there's a lot of stuff going on in Earth soil that Mars soil doesn't have, even when it's placed in an Earth atmosphere and given plenty of water. Bacterial activity, certain nutrients provided by animal life, etc. None of that is happening on Mars. One of my tasks for the mission was to see how plants grow here, in various combinations of Earth and Mars soil and atmosphere.
+
+That's why I have a small amount of Earth soil and a bunch of plant seeds with me.
+
+I can't get too excited, however. It's about the amount of soil you'd put in a window box, and the only seeds I have are a few species of grass and ferns. They're the most rugged and easily grown plants on Earth, so NASA picked them as the test subjects.
+
+So I have two problems: not enough dirt, and nothing edible to plant in it.
+
+But I'm a botanist, damn it. I should be able to find a way to make this happen. If I don't, I'll be a really hungry botanist in about a year.
+
+
+
+
+
+LOG ENTRY: SOL 11
+
+I wonder how the Cubs are doing.
+
+
+
+
+
+LOG ENTRY: SOL 14
+
+I got my undergrad degree at the University of Chicago. Half the people who studied botany were hippies who thought they could return to some natural world system. Somehow feeding seven billion people through pure gathering. They spent most of their time working out better ways to grow pot. I didn't like them. I've always been in it for the science, not for any New World Order bullshit.
+
+When they made compost heaps and tried to conserve every little ounce of living matter, I laughed at them. "Look at the silly hippies! Look at their pathetic attempts to simulate a complex global ecosystem in their backyard."
+
+Of course, now I'm doing exactly that. I'm saving every scrap of biomatter I can find. Every time I finish a meal, the leftovers go to the compost bucket. As for other biological material...
+
+The Hab has sophisticated toilets. Shit is usually vaccum-dried, then accumulated in sealed bags to be discarded on the surface.
+
+Not anymore!
+
+In fact, I even did an EVA to recover the previous bags of shit from before the crew left. Being completely desiccated, this particular shit didn't have bacteria in it anymore, but it still had complex proteins and would serve as useful manure. Adding it to water and active bacteria would quickly get it inundated, replacing any population killed by the Toilet of Doom.
+
+I found a big container and put a bit of water in it, then added the dried shit. Since then, I've added my own shit to it as well. The worse it smells, the better things are going. That's the bacteria at work!
+
+
+
+Once I get some Martian soil in here, I can mix in the shit and spread it out. Then I can sprinkle the Earth soil on top. You might not think that would be an important step, but it is. There are dozens of species of bacteria living in Earth soil, and they're critical to plant growth. They'll spread out and breed like...well, like a bacterial infection.
+
+People have been using human waste as fertilizer for centuries. It's even got a pleasant name: "night soil." Normally, it's not an ideal way to grow crops, because it spreads disease: Human waste has pathogens in it that, you guessed it, infect humans. But it's not a problem for me. The only pathogens in this waste are the ones I already have.
+
+Within a week, the Martian soil will be ready for plants to germinate in. But I won't plant yet. I'll bring in more lifeless soil from outside and spread some of the live soil over it. It'll "infect" the new soil and I'll have double what I started with. After another week, I'll double it again. And so on. Of course, all the while, I'll be adding all new manure to the effort.
+
+My asshole is doing as much to keep me alive as my brain.
+
+This isn't a new concept I just came up with. People have speculated on how to make crop soil out of Martian dirt for decades. I'll just be putting it to the test for the first time.
+
+I searched through the food supplies and found all sorts of things that I can plant. Peas, for instance. Plenty of beans, too. I also found several potatoes. If any of them can still germinate after their ordeal, that'll be great. With a nearly infinite supply of vitamins, all I need are calories of any kind to survive.
+
+The total floor space of the Hab is about 92 square meters. I plan to dedicate all of it to this endeavor. I don't mind walking on dirt. It'll be a lot of work, but I'm going to need to cover the entire floor to a depth of 10 centimeters. That means I'll have to transport 9.2 cubic meters of Martian soil into the Hab. I can get maybe one-tenth of a cubic meter in through the airlock at a time, and it'll be backbreaking work to collect it. But in the end, if everything goes to plan, I'll have 92 square meters of crop-able soil.
+
+
+
+Hell yeah I'm a botanist! Fear my botany powers!
+
+
+
+
+
+LOG ENTRY: SOL 15
+
+Ugh! This is backbreaking work!
+
+I spent twelve hours today on EVAs to bring dirt into the Hab. I only managed to cover a small corner of the base, maybe five square meters. At this rate it'll take me weeks to get all the soil in. But hey, time is one thing I've got.
+
+The first few EVAs were pretty inefficient; me filling small containers and bringing them in through the airlock. Then I got wise and just put one big container in the airlock itself and filled that with small containers till it was full. That sped things up a lot because the airlock takes about ten minutes to get through.
+
+I ache all over. And the shovels I have are made for taking samples, not heavy digging. My back is killing me. I foraged in the medical supplies and found some Vicodin. I took it about ten minutes ago. Should be kicking in soon.
+
+Anyway, it's nice to see progress. Time to start getting the bacteria to work on these minerals. After lunch. No three-fourths ration today. I've earned a full meal.
+
+
+
+
+
+LOG ENTRY: SOL 16
+
+One complication I hadn't thought of: water.
+
+Turns out being on the surface of Mars for a few million years eliminates all the water in the soil. My master's degree in botany makes me pretty sure plants need wet dirt to grow in. Not to mention the bacteria that has to live in the dirt first.
+
+
+
+Fortunately, I have water. But not as much as I want. To be viable, soil needs 40 liters of water per cubic meter. My overall plan calls for 9.2 cubic meters of soil. So I'll eventually need 368 liters of water to feed it.
+
+The Hab has an excellent water reclaimer. Best technology available on Earth. So NASA figured, "Why send a lot of water up there? Just send enough for an emergency." Humans need three liters of water per day to be comfortable. They gave us 50 liters each, making 300 liters total in the Hab.
+
+I'm willing to dedicate all but an emergency 50 liters to the cause. That means I can feed 62.5 square meters at a depth of 10 centimeters. About two-thirds of the Hab's floor. It'll have to do. That's the long-term plan. For today, my goal was five square meters.
+
+I wadded up blankets and uniforms from my departed crewmates to serve as one edge of a planter box with the curved walls of the Hab being the rest of the perimeter. It was as close to five square meters as I could manage. I filled it with sand to a depth of 10 centimeters. Then I sacrificed 20 liters of precious water to the dirt gods.
+
+Then things got disgusting. I dumped my big container o' shit onto the soil and nearly puked from the smell. I mixed this soil and shit together with a shovel, and spread it out evenly again. Then I sprinkled the Earth soil on top. Get to work, bacteria. I'm counting on you. That smell's going to stick around for a while, too. It's not like I can open a window. Still, you get used to it.
+
+In other news, today is Thanksgiving. My family will be gathering in Chicago for the usual feast at my parents' house. My guess is it won't be much fun, what with me having died ten days ago. Hell, they probably just got done with my funeral.
+
+I wonder if they'll ever find out what really happened. I've been so busy staying alive I never thought of what this must be like for my parents. Right now, they're suffering the worst pain anyone can endure. I'd give anything just to let them know I'm still alive.
+
+I'll just have to survive to make up for it.
+
+
+
+
+
+LOG ENTRY: SOL 22
+
+Wow. Things really came along.
+
+I got all the sand in and ready to go. Two-thirds of the base is now dirt. And today I executed my first dirt-doubling. It's been a week, and the former Martian soil is rich and lovely. Two more doublings and I'll have covered the whole field.
+
+All that work was great for my morale. It gave me something to do. But after things settled down a bit, and I had dinner while listening to Johanssen's Beatles music collection, I got depressed again.
+
+Doing the math, this won't keep me from starving.
+
+My best bet for making calories is potatoes. They grow prolifically and have a reasonable caloric content (770 calories per kilogram). I'm pretty sure the ones I have will germinate. Problem is I can't grow enough of them. In 62 square meters, I could grow maybe 150 kilograms of potatoes in 400 days (the time I have before running out of food). That's a grand total of 115,500 calories, a sustainable average of 288 calories per day. With my height and weight, if I'm willing to starve a little, I need 1500 calories per day.
+
+Not even close.
+
+So I can't just live off the land forever. But I can extend my life. The potatoes will last me 76 days.
+
+Potatoes grow continually, so in those 76 days, I can grow another 22,000 calories of potatoes, which will tide me over for another 15 days. After that, it's kind of pointless to continue the trend. All told it buys me about 90 days.
+
+So now I'll start starving to death on Sol 490 instead of Sol 400. It's progress, but any hope of survival rests on me surviving until Sol 1412, when Ares 4 will land.
+
+There's about a thousand days of food I don't have. And I don't have a plan for how to get it.
+
+Shit.
+
+
+
+
+
+CHAPTER 3
+
+
+
+
+
+LOG ENTRY: SOL 25
+
+Remember those old math questions you had in algebra class? Where water is entering a container at a certain rate and leaving at a different rate and you need to figure out when it'll be empty? Well, that concept is critical to the "Mark Watney doesn't die" project I'm working on.
+
+I need to create calories. And I need enough to last the 1387 sols until Ares 4 arrives. If I don't get rescued by Ares 4, I'm dead anyway. A sol is 39 minutes longer than a day, so it works out to be 1425 days. That's my target: 1425 days of food.
+
+I have plenty of multivitamins; over double what I need. And there's five times the minimum protein in each food pack, so careful rationing of portions takes care of my protein needs for at least four years. My general nutrition is taken care of. I just need calories.
+
+I need 1500 calories every day. I have 400 days of food to start off with. So how many calories do I need to generate per day along the entire time period to stay alive for around 1425 days?
+
+I'll spare you the math. The answer is about 1100. I need to create 1100 calories per day with my farming efforts to survive until Ares 4 gets here. Actually, a little more than that, because it's Sol 25 right now and I haven't actually planted anything yet.
+
+
+
+With my 62 square meters of farmland, I'll be able to create about 288 calories per day. So I need almost four times my current plan's production to survive.
+
+That means I need more surface area for farming, and more water to hydrate the soil. So let's take the problems one at a time.
+
+How much farmland can I really make?
+
+There are 92 square meters in the Hab. Let's say I could make use of all of it.
+
+Also, there are five unused bunks. Let's say I put soil in on them, too. They're 2 square meters each, giving me 10 more square meters. So we're up to 102.
+
+The Hab has three lab tables, each about 2 square meters. I want to keep one for my own use, leaving two for the cause. That's another 4 square meters, bringing the total to 106.
+
+I have two Martian rovers. They have pressure seals, allowing the occupants to drive without space suits during long periods traversing the surface. They're too cramped to plant crops in, and I want to be able to drive them around anyway. But both rovers have an emergency pop-tent.
+
+There are a lot of problems with using pop-tents as farmland, but they have 10 square meters of floor space each. Presuming I can overcome the problems, they net me another 20 square meters, bringing my farmland up to 126.
+
+One hundred and twenty-six square meters of farmable land. That's something to work with. I still don't have the water to moisten all that soil, but like I said, one thing at a time.
+
+The next thing to consider is how efficient I can be in growing potatoes. I based my crop yield estimates on the potato industry back on Earth. But potato farmers aren't in a desperate race for survival like I am. Can I get a better yield?
+
+For starters, I can give attention to each individual plant. I can trim them and keep them healthy and not interfering with each other. Also, as their flowering bodies breach the surface, I can replant them deeper, then plant younger plants above them. For normal potato farmers, it's not worth doing because they're working with literally millions of potato plants.
+
+
+
+Also, this sort of farming annihilates the soil. Any farmer doing it would turn their land into a dust bowl within twelve years. It's not sustainable. But who cares? I just need to survive for four years.
+
+I estimate I can get 50 percent higher yield by using these tactics. And with the 126 square meters of farmland (just over double the 62 square meters I now have) it works out to be over 850 calories per day.
+
+That's real progress. I'd still be in danger of starvation, but it gets me in the range of survival. I might be able to make it by nearly starving but not quite dying. I could reduce my caloric use by minimizing manual labor. I could set the temperature of the Hab higher than normal, meaning my body would expend less energy keeping its temperature. I could cut off an arm and eat it, gaining me valuable calories and reducing my overall caloric need.
+
+No, not really.
+
+So let's say I could clear up that much farmland. Seems reasonable. Where do I get the water? To go from 62 to 126 square meters of farmland at 10 centimeters deep, I'll need 6.4 more cubic meters of soil (more shoveling, whee!) and that'll need over 250 liters of water.
+
+The 50 liters I have is for me to drink if the water reclaimer breaks. So I'm 250 liters short of my 250-liter goal.
+
+Bleh. I'm going to bed.
+
+
+
+
+
+LOG ENTRY: SOL 26
+
+It was a backbreaking yet productive day.
+
+I was sick of thinking, so instead of trying to figure out where I'll get 250 liters of water, I did some manual labor. I need to get a whole assload more soil into the Hab, even if it is dry and useless right now.
+
+
+
+I got a cubic meter in before getting exhausted.
+
+Then, a minor dust storm dropped by for an hour and covered the solar collectors with crap. So I had to suit up again and do another EVA. I was in a pissy mood the whole time. Sweeping off a huge field of solar cells is boring and physically demanding. But once the job was done, I came back to my Little Hab on the Prairie.
+
+It was about time for another dirt-doubling, so I figured I might as well get it over with. It took an hour. One more doubling and the usable soil will all be good to go.
+
+Also, I figured it was time to start up a seed crop. I'd doubled the soil enough that I could afford to leave a little corner of it alone. I had twelve potatoes to work with.
+
+I am one lucky son of a bitch they aren't freeze-dried or mulched. Why did NASA send twelve whole potatoes, refrigerated but not frozen? And why send them along with us as in-pressure cargo rather than in a crate with the rest of the Hab supplies? Because Thanksgiving was going to happen while we were doing surface operations, and NASA's shrinks thought it would be good for us to make a meal together. Not just to eat it, but to actually prepare it. There's probably some logic to that, but who cares?
+
+I cut each potato into four pieces, making sure each piece had at least two eyes. The eyes are where they sprout from. I let them sit for a few hours to harden a bit, then planted them, well spaced apart, in the corner. Godspeed, little taters. My life depends on you.
+
+Normally, it takes at least 90 days to yield full-sized potatoes. But I can't wait that long. I'll need to cut up all the potatoes from this crop to seed the rest of the field.
+
+By setting the Hab temperature to a balmy 25.5 C, I can make the plants grow faster. Also, the internal lights will provide plenty of "sunlight," and I'll make sure they get lots of water (once I figure out where to get water). There will be no foul weather, or any parasites to hassle them, or any weeds to compete with for soil or nutrients. With all this going for them, they should yield healthy, sproutable tubers within forty days.
+
+
+
+I figured that was enough being Farmer Mark for one day.
+
+A full meal for dinner. I'd earned it. Plus, I'd burned a ton of calories, and I wanted them back.
+
+I rifled through Commander Lewis's stuff until I found her personal data-stick. Everyone got to bring whatever digital entertainment they wanted, and I was tired of listening to Johanssen's Beatles albums for now. Time to see what Lewis had.
+
+Crappy TV shows. That's what she had. Countless entire runs of TV shows from forever ago.
+
+Well. Beggars can't be choosers. Three's Company it is.
+
+
+
+
+
+LOG ENTRY: SOL 29
+
+Over the last few days, I got in all the dirt that I'll need. I prepped the tables and bunks for holding the weight of soil, and even put the dirt in place. There's still no water to make it viable, but I have some ideas. Really bad ideas, but they're ideas.
+
+Today's big accomplishment was setting up the pop-tents.
+
+The problem with the rovers' pop-tents is they weren't designed for frequent use.
+
+The idea was you'd throw out a pop-tent, get in, and wait for rescue. The airlock is nothing more than valves and two doors. Equalize the airlock with your side of it, get in, equalize with the other side, get out. This means you lose a lot of air with each use. And I'll need to get in there at least once a day. The total volume of each pop-tent is pretty low, so I can't afford to lose air from it.
+
+I spent hours trying to figure out how to attach a pop-tent airlock to a Hab airlock. I have three airlocks in the Hab. I'd be willing to dedicate two to pop-tents. That would have been awesome.
+
+The frustrating part is pop-tent airlocks can attach to other airlocks! You might have injured people in there, or not enough space suits. You need to be able to get people out without exposing them to the Martian atmosphere.
+
+
+
+But the pop-tents were designed for your crewmates to come rescue you in a rover. The airlocks on the Hab are much larger and completely different from the airlocks on the rovers. When you think about it, there's really no reason to attach a pop-tent to the Hab.
+
+Unless you're stranded on Mars, everyone thinks you're dead, and you're in a desperate fight against time and the elements to stay alive. But, you know, other than that edge case, there's no reason.
+
+So I finally decided I'd just take the hit. I'll be losing some air every time I enter or exit a pop-tent. The good news is each pop-tent has an air feed valve on the outside. Remember, these are emergency shelters. The occupants might need air, and you can provide it from a rover by hooking up an air line. It's nothing more than a tube that equalizes the rover's air with the pop-tent's.
+
+The Hab and the rovers use the same valve and tubing standards, so I was able to attach the pop-tents directly to the Hab. That'll automatically replenish the air I lose with my entries and exits (what we NASA folk call ingress and egress).
+
+NASA was not screwing around with these emergency tents. The moment I pushed the panic button in the rover, there was an ear-popping whoosh as the pop-tent fired out, attached to the rover airlock. It took about two seconds.
+
+I closed the airlock from the rover side and ended up with a nice, isolated pop-tent. Setting up the equalizer hose was trivial (for once I'm using equipment the way it was designed to be used). Then, after a few trips through the airlock (with the air-loss automatically equalized by the Hab) I got the dirt in.
+
+I repeated the process for the other tent. Everything went really easily.
+
+Sigh...water.
+
+In high school, I played a lot of Dungeons and Dragons. (You may not have guessed this botanist/mechanical engineer was a bit of a nerd in high school, but indeed I was.) In the game I played a cleric. One of the magic spells I could cast was "Create Water." I always thought it was a really stupid spell, and I never used it. Boy, what I wouldn't give to be able to do that in real life right now.
+
+
+
+Anyway. That's a problem for tomorrow.
+
+For tonight, I have to get back to Three's Company. I stopped last night in the middle of the episode where Mr. Roper saw something and took it out of context.
+
+
+
+
+
+LOG ENTRY: SOL 30
+
+I have an idiotically dangerous plan for getting the water I need. And boy, do I mean dangerous. But I don't have much choice. I'm out of ideas and I'm due for another dirt-doubling in a few days. When I do the final doubling, I'll be doubling on to all that new soil I've brought in. If I don't wet it first, it'll just die.
+
+There isn't a lot of water here on Mars. There's ice at the poles, but they're too far away. If I want water, I'll have to make it from scratch. Fortunately, I know the recipe: Take hydrogen. Add oxygen. Burn.
+
+Let's take them one at a time. I'll start with oxygen.
+
+I have a fair bit of O2 reserves, but not enough to make 250 liters of water. Two high-pressure tanks at one end of the Hab are my entire supply (plus the air in the Hab of course). They each contain 25 liters of liquid O2. The Hab would use them only in an emergency; it has the oxygenator to balance the atmosphere. The reason the O2 tanks are here is to feed the space suits and rovers.
+
+Anyway, the reserve oxygen would only be enough to make 100 liters of water (50 liters of O2 makes 100 liters of molecules that only have one O each). That would mean no EVAs for me, and no emergency reserves. And it would make less than half the water I need. Out of the question.
+
+
+
+But oxygen's easier to find on Mars than you might think. The atmosphere is 95 percent CO2. And I happen to have a machine whose sole purpose is liberating oxygen from CO2. Yay, oxygenator!
+
+One problem: The atmosphere is very thin-less than 1 percent of the pressure on Earth. So it's hard to collect. Getting air from outside to inside is nearly impossible. The whole purpose of the Hab is to keep that sort of thing from happening. The tiny amount of Martian atmosphere that enters when I use an airlock is laughable.
+
+That's where the MAV fuel plant comes in.
+
+My crewmates took away the MAV weeks ago. But the bottom half of it stayed behind. NASA isn't in the habit of putting unnecessary mass into orbit. The landing gear, ingress ramp, and fuel plant are still here. Remember how the MAV made its own fuel with help from the Martian atmosphere? Step one of that is to collect CO2 and store it in a high-pressure vessel. Once I get the fuel plant hooked up to the Hab's power, it'll give me half a liter of liquid CO2 per hour, indefinitely. After ten sols it'll have made 125 liters of CO2, which will make 125 liters of O2 after I feed it through the oxygenator.
+
+That's enough to make 250 liters of water. So I have a plan for oxygen.
+
+The hydrogen will be a little trickier.
+
+I considered raiding the hydrogen fuel cells, but I need those batteries to maintain power at night. If I don't have that, it'll get too cold. I could bundle up, but the cold would kill my crops. And each fuel cell has only a small amount of H2 anyway. It's just not worth sacrificing so much usefulness for so little gain. The one thing I have going for me is that energy is not a problem. I don't want to give that up.
+
+So I'll have to go a different route.
+
+I often talk about the MAV. But now I want to talk about the MDV.
+
+During the most terrifying twenty-three minutes of my life, four of my crewmates and I tried not to shit ourselves while Martinez piloted the MDV down to the surface. It was kind of like being in a tumble-dryer.
+
+
+
+First, we descended from Hermes, and decelerated our orbital velocity so we could start falling properly. Everything was smooth until we hit the atmosphere. If you think turbulence is rough in a jetliner going 720 kph, just imagine what it's like at 28,000 kph.
+
+Several staged sets of chutes deployed automatically to slow our descent, then Martinez manually piloted us to the ground, using the thrusters to slow descent and control our lateral motion. He'd trained for this for years, and he did his job extraordinarily well. He exceeded all plausible expectations of landings, putting us just nine meters from the target. The guy just plain owned that landing.
+
+Thanks, Martinez! You may have saved my life!
+
+Not because of the perfect landing, but because he left so much fuel behind. Hundreds of liters of unused hydrazine. Each molecule of hydrazine has four hydrogen atoms in it. So each liter of hydrazine has enough hydrogen for two liters of water.
+
+I did a little EVA today to check. The MDV has 292 liters of juice left in the tanks. Enough to make almost 600 liters of water! Way more than I need!
+
+There's just one catch: Liberating hydrogen from hydrazine is...well...it's how rockets work. It's really, really hot. And dangerous. If I do it in an oxygen atmosphere, the hot and newly liberated hydrogen will explode. There'll be a lot of H2O at the end, but I'll be too dead to appreciate it.
+
+At its root, hydrazine is pretty simple. The Germans used it as far back as World War II for rocket-assisted fighter fuel (and occasionally blew themselves up with it).
+
+All you have to do is run it over a catalyst (which I can extract from the MDV engine) and it will turn into nitrogen and hydrogen. I'll spare you the chemistry, but the end result is that five molecules of hydrazine becomes five molecules of harmless N2 and ten molecules of lovely H2. During this process, it goes through an intermediate step of being ammonia. Chemistry, being the sloppy bitch it is, ensures there'll be some ammonia that doesn't react with the hydrazine, so it'll just stay ammonia. You like the smell of ammonia? Well, it'll be prevalent in my increasingly hellish existence.
+
+
+
+The chemistry is on my side. The question now is how do I actually make this reaction happen slowly, and how do I collect the hydrogen? The answer is: I don't know.
+
+I suppose I'll think of something. Or die.
+
+Anyway, much more important: I simply can't abide the replacement of Chrissy with Cindy. Three's Company may never be the same after this fiasco. Time will tell.
+
+
+
+
+
+CHAPTER 4
+
+
+
+
+
+LOG ENTRY: SOL 32
+
+So I ran into a bunch of problems with my water plan.
+
+My idea is to make 600 liters of water (limited by the hydrogen I can get from the hydrazine). That means I'll need 300 liters of liquid O2.
+
+I can create the O2 easily enough. It takes twenty hours for the MAV fuel plant to fill its 10-liter tank with CO2. The oxygenator can turn it into O2, then the atmospheric regulator will see the O2 content in the Hab is high, and pull it out of the air, storing it in the main O2 tanks. They'll fill up, so I'll have to transfer O2 over to the rovers' tanks and even the space suit tanks as necessary.
+
+But I can't create it very quickly. At half a liter of CO2 per hour, it will take twenty-five days to make the oxygen I need. That's longer than I'd like.
+
+Also, there's the problem of storing the hydrogen. The air tanks of the Hab, the rovers, and all the space suits add up to exactly 374 liters of storage. To hold all the materials for water, I would need a whopping 900 liters of storage.
+
+I considered using one of the rovers as a "tank." It would certainly be big enough, but it just isn't designed to hold in that much pressure. It's made to hold (you guessed it) one atmosphere. I need vessels that can hold fifty times that much. I'm sure a rover would burst.
+
+
+
+The best way to store the ingredients of water is to make them be water. So what's what I'll have to do.
+
+The concept is simple, but the execution will be incredibly dangerous.
+
+Every twenty hours, I'll have 10 liters of CO2 thanks to the MAV fuel plant. I'll vent it into the Hab via the highly scientific method of detaching the tank from the MAV landing struts, bringing it into the Hab, then opening the valve until it's empty.
+
+The oxygenator will turn it into oxygen in its own time.
+
+Then, I'll release hydrazine, very slowly, over the iridium catalyst, to turn it into N2 and H2. I'll direct the hydrogen to a small area and burn it.
+
+As you can see, this plan provides many opportunities for me to die in a fiery explosion.
+
+Firstly, hydrazine is some serious death. If I make any mistakes, there'll be nothing left but the "Mark Watney Memorial Crater" where the Hab once stood.
+
+Presuming I don't fuck up with the hydrazine, there's still the matter of burning hydrogen. I'm going to be setting a fire. In the Hab. On purpose.
+
+If you asked every engineer at NASA what the worst scenario for the Hab was, they'd all answer "fire." If you asked them what the result would be, they'd answer "death by fire."
+
+But if I can pull it off, I'll be making water continuously, with no need to store hydrogen or oxygen. It'll be mixed into the atmosphere as humidity, but the water reclaimer will pull it out.
+
+I don't even have to perfectly match the hydrazine end of it with the fuel plant CO2 part. There's plenty of oxygen in the Hab, and plenty more in reserve. I just need to make sure not to make so much water I run myself out of O2.
+
+
+
+I hooked up the MAV fuel plant to the Hab's power supply. Fortunately they both use the same voltage. It's chugging away, collecting CO2 for me.
+
+Half-ration for dinner. All I accomplished today was thinking up a plan that'll kill me, and that doesn't take much energy.
+
+I'm going to finish off the last of Three's Company tonight. Frankly, I like Mr. Furley more than the Ropers.
+
+
+
+
+
+LOG ENTRY: SOL 33
+
+This may be my last entry.
+
+I've known since Sol 6 there was a good chance I'd die here. But I figured it would be when I ran out of food. I didn't think it would be this early.
+
+I'm about to fire up the hydrazine.
+
+Our mission was designed knowing that anything might need maintenance, so I have plenty of tools. Even in a space suit, I was able to pry the access panels off the MDV and get at the six hydrazine tanks. I set them in the shadow of a rover to keep them from heating up too much. There's more shade and a cooler temperature near the Hab, but fuck that. If they're going to blow up, they can blow up a rover, not my house.
+
+Then I pried out the reaction chamber. It took some work and I cracked the damn thing in half, but I got it out. Lucky for me I don't need a proper fuel reaction. In fact, I really, super-duper don't want a proper fuel reaction.
+
+I brought the reaction chamber in. I briefly considered only bringing one tank of hydrazine in at a time to reduce risk. But some back-of-the-napkin math told me even one tank was enough to blow the whole Hab up. So I brought them all in. Why not?
+
+The tanks have manual vent valves. I'm not 100 percent sure what they're for. Certainly we were never expected to use them. I think they're there to release pressure during the many quality checks done during construction and before fueling. Whatever the reason, I have valves to work with. All it takes is a wrench.
+
+
+
+I liberated a spare water hose from the water reclaimer. With some thread torn out of a uniform (sorry, Johanssen), I attached it to the valve output. Hydrazine is a liquid, so all I have to do is lead it to the reaction chamber (more of a "reaction bowl" now).
+
+Meanwhile, the MAV fuel plant is still working. I've already brought in one tank of CO2, vented it, and returned it for refilling.
+
+So there are no more excuses. It's time to start making water.
+
+If you find the charred remains of the Hab, it means I did something wrong. I'm copying this log over to both rovers, so it's more likely it'll survive.
+
+Here goes nothin'.
+
+
+
+
+
+LOG ENTRY: SOL 33 (2)
+
+Well, I didn't die.
+
+First thing I did was put on the inner lining of my EVA suit. Not the bulky suit itself, just the inner clothing I wear under it, including the gloves and booties. Then I got an oxygen mask from the medical supplies and some lab goggles from Vogel's chem kit. Almost all of my body was protected and I was breathing canned air.
+
+Why? Because hydrazine is very toxic. If I breathe too much of it, I'll get major lung problems. If I get it on my skin, I'll have chemical burns for the rest of my life. I wasn't taking any chances.
+
+I turned the valve until a trickle of hydrazine came out. I let one drop fall into the iridium bowl.
+
+It undramatically sizzled and disappeared.
+
+But hey, that's what I wanted. I just freed up hydrogen and nitrogen. Yay!
+
+One thing I have in abundance here are bags. They're not much different from kitchen trash bags, though I'm sure they cost $50,000 because of NASA.
+
+
+
+In addition to being our commander, Lewis was also the geologist. She was going to collect rock and soil samples from all over the operational area (10-kilometer radius). Weight limits restricted how much she could actually bring back to Earth, so she was going to collect first, then sort out the most interesting 50 kilograms to take home. The bags were to store and tag the samples. Some are smaller than a Ziploc, while others are as big as a Hefty lawn and leaf bag.
+
+Also, I have duct tape. Ordinary duct tape, like you buy at a hardware store. Turns out even NASA can't improve on duct tape.
+
+I cut up a few Hefty-sized bags and taped them together to make a sort of tent. Really it was more of a supersized bag. I was able to cover the whole table where my hydrazine mad scientist setup was. I put a few knickknacks on the table to keep the plastic out of the iridium bowl. Thankfully, the bags are clear, so I can still see what's going on.
+
+Next, I sacrificed a space suit to the cause. I needed an air hose. I have a surplus of space suits, after all. A total of six; one for each crew member. So I don't mind murdering one of them.
+
+I cut a hole in the top of the plastic and duct-taped the hose in place. Nice seal, I think.
+
+With some more string from Johannsen's clothing, I hung the other end of the hose from the top of the Hab's dome by two angled threads (to keep them well clear of the hose opening). Now I had a little chimney. The hose was about one centimeter wide. Hopefully a good aperture.
+
+The hydrogen will be hot after the reaction, and it'll want to go up. So I'll let it go up the chimney, then burn it as it comes out.
+
+Then I had to invent fire.
+
+NASA put a lot of effort into making sure nothing here can burn. Everything is made of metal or flame-retardant plastic and the uniforms are synthetic. I needed something that could hold a flame, some kind of pilot light. I don't have the skills to keep enough H2 flowing to feed a flame without killing myself. Too narrow a margin there.
+
+
