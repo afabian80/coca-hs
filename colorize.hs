@@ -12,11 +12,14 @@ main = do
 processInputFile :: FilePath -> IO ()
 processInputFile inputFile = do
         inputText <- readFile inputFile
-        words1kText <- readFile "cocadb/basewrd01.txt"
-        words5kText <- readFile "cocadb/basewrd05.txt"
-        let knownWordSet = Set.fromList (words words1kText)
-        let targetWordSet = Set.fromList (words words5kText)
-        let colorizedLines = map (linify . process knownWordSet targetWordSet) (lines inputText)
+        knownWordsText <- readFile "cocadb/knownwords.txt"
+        targetedWordsText <- readFile "cocadb/targetedwords.txt"
+        niceToHaveWordsText <- readFile "cocadb/nicetohavewords.txt"
+        let knownWordSet = Set.fromList (words knownWordsText)
+        let targetWordSet = Set.fromList (words targetedWordsText)
+        let niceToHaveWordSet = Set.fromList (words niceToHaveWordsText)
+        let categories = [knownWordSet, targetWordSet, niceToHaveWordSet]
+        let colorizedLines = map (linify . process categories) (lines inputText)
         putStrLn $ htmlize (unlines colorizedLines)
 
 linify :: String -> String
@@ -31,6 +34,9 @@ colorForTargetWords = "LightGreen"
 colorForUnknownWords :: String
 colorForUnknownWords = "DarkSalmon"
 
+colorForNiceToHaveWords :: String
+colorForNiceToHaveWords = "Plum"
+
 popWord :: String -> String
 popWord = takeWhile isAlpha
 
@@ -40,22 +46,23 @@ skipWord = dropWhile isAlpha
 copyTillWord :: String -> String
 copyTillWord = takeWhile (not . isAlpha)
 
-process :: Set.Set String -> Set.Set String -> String -> String
-process _ _ [] = []
-process knownWordSet targetWordSet xs =
-        colorize headWord knownWordSet targetWordSet ++
+process :: [Set.Set String] -> String -> String
+process _ [] = []
+process categories xs =
+        colorize headWord categories ++
         nonWordAfterHead ++
-        process knownWordSet targetWordSet tailWords
+        process categories tailWords
         where
                 headWord = popWord xs
                 nonWordAfterHead = copyTillWord $ skipWord xs
                 tailWords = drop (length headWord + length nonWordAfterHead) xs
 
-colorize :: String -> Set.Set String -> Set.Set String -> String
-colorize [] _ _ = []
-colorize xs knownWordSet targetWordSet
-        | map toUpper xs `elem` knownWordSet = xs
-        | map toUpper xs `elem` targetWordSet = decorate xs colorForTargetWords
+colorize :: String -> [Set.Set String] -> String
+colorize [] _ = []
+colorize xs categories
+        | map toUpper xs `elem` head categories = xs
+        | map toUpper xs `elem` (categories !! 1) = decorate xs colorForTargetWords
+        | map toUpper xs `elem` (categories !! 2) = decorate xs colorForNiceToHaveWords
         | otherwise = decorate xs colorForUnknownWords
 
 decorate :: String -> String -> String
