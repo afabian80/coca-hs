@@ -1,8 +1,17 @@
+import System.Environment (getArgs)
 import Data.Char (isAlpha)
 
 main :: IO ()
 main = do
-        let colorizedLines = map (linify . process) (lines subtitle)
+        args <- getArgs
+        case args of
+                [inputFile] -> processInputFile inputFile
+                _ -> putStrLn "Error: input argument missing"
+
+processInputFile :: FilePath -> IO ()
+processInputFile inputFile = do
+        inputText <- readFile inputFile
+        let colorizedLines = map (linify . process) (lines inputText)
         putStrLn $ htmlize (unlines colorizedLines)
 
 linify :: String -> String
@@ -17,8 +26,8 @@ colorForTargetWords = "LightGreen"
 colorForUnknownWords :: String
 colorForUnknownWords = "DarkSalmon"
 
-subtitle :: String
-subtitle = "2\n00:06:26,193 --> 00:06:28,926\nI'll have a smoke outside,\nor I'll fall asleep.\n\"Son of a beach\" - said Kolya."
+-- subtitle :: String
+-- subtitle = "2\n00:06:26,193 --> 00:06:28,926\nI'll have a smoke outside,\nor I'll fall asleep.\n\"Son of a beach\" - said Kolya."
 
 wordsKnown :: [String]
 wordsKnown = ["one", "two", "have", "smoke", "outside", "said"]
