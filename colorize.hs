@@ -2,8 +2,11 @@ import Data.Char (isAlpha)
 
 main :: IO ()
 main = do
-        let colorizedText = process subtitle
-        putStrLn $ htmlize colorizedText
+        let colorizedLines = map (linify . process) (lines subtitle)
+        putStrLn $ htmlize (unlines colorizedLines)
+
+linify :: String -> String
+linify xs = "<p>" ++ xs ++ "</p>"
 
 htmlize :: String -> String
 htmlize xs = "<html>\n<body>\n" ++ xs ++ "\n</body>\n</html>"
