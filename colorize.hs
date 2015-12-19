@@ -3,9 +3,8 @@ import Data.Char (isAlpha, toUpper)
 import qualified Data.Set as Set
 import Text.Printf (printf)
 import Data.List.Split (splitWhen)
-
-maxDBNumber :: Int
-maxDBNumber = 34
+import System.Directory (getDirectoryContents)
+import System.Posix.Files (getFileStatus, isRegularFile)
 
 main :: IO ()
 main = do
@@ -22,11 +21,17 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
         putStrLn "Colorizing input based on given boundaries..."
         let knownBoundary = read knownBoundaryText :: Int
         let targetBoundary = read targetBoundaryText :: Int
+        let dbDir = "cocadb"
+        dbFileNames <- getDirectoryContents dbDir
+        let dbRelativeNames = map ((dbDir ++ "/") ++) dbFileNames
+        dbFileStatuses <- mapM getFileStatus dbRelativeNames
+        let fileStatusPairs = zip dbFileNames (map isRegularFile dbFileStatuses)
+        let regularDbFiles = [f | (f,st) <- fileStatusPairs, st]
         inputText <- readFile inputFile
         let inputSet = tokenize inputText
-        knownWordSet <- loadSetFromRange 1 knownBoundary
-        targetWordSet <- loadSetFromRange (knownBoundary + 1) targetBoundary
-        niceToHaveWordSet <- loadSetFromRange (targetBoundary + 1) maxDBNumber
+        knownWordSet <- loadSetFromRange dbDir 1 knownBoundary
+        targetWordSet <- loadSetFromRange dbDir (knownBoundary + 1) targetBoundary
+        niceToHaveWordSet <- loadSetFromRange dbDir (targetBoundary + 1) (length regularDbFiles)
         let categories = [
                 Set.intersection inputSet knownWordSet,
                 Set.intersection inputSet targetWordSet,
@@ -41,15 +46,15 @@ tokenize text = Set.fromList uppercaseWords
         where
                 uppercaseWords = splitWhen (not . isAlpha) (map toUpper text)
 
-loadSetFromRange :: Int -> Int -> IO (Set.Set String)
-loadSetFromRange lo hi = do
-        let fileNames = generateFileNames lo hi
+loadSetFromRange :: String -> Int -> Int -> IO (Set.Set String)
+loadSetFromRange dbDir lo hi = do
+        let fileNames = generateFileNames dbDir lo hi
         sets <- mapM loadSet fileNames
         return (Set.unions sets)
 
-generateFileNames :: Int -> Int -> [String]
-generateFileNames lo hi =
-        map (printf "cocadb/basewrd%02d.txt") [lo..hi]
+generateFileNames :: String -> Int -> Int -> [String]
+generateFileNames dbDir lo hi =
+        map (printf (dbDir ++ "/basewrd%02d.txt")) [lo..hi]
 
 loadSet :: String -> IO (Set.Set String)
 loadSet path = do
