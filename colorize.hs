@@ -18,7 +18,7 @@ processInputFile :: FilePath -> String -> String -> IO ()
 processInputFile inputFile knownBoundaryText targetBoundaryText = do
         putStrLn (printf "Upper boundary of known words: %s-K" knownBoundaryText)
         putStrLn (printf "Upper boundary of to-be-known words: %s-K" targetBoundaryText)
-        putStrLn "Colorizing input based on given boundaries..."
+        putStrLn "\nLoading database and input files...\n"
         let knownBoundary = read knownBoundaryText :: Int
         let targetBoundary = read targetBoundaryText :: Int
         let dbDir = "cocadb"
@@ -36,10 +36,14 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
                 Set.intersection inputSet knownWordSet,
                 Set.intersection inputSet targetWordSet,
                 Set.intersection inputSet niceToHaveWordSet]
+        putStrLn (printf "Number of known words:         %8d" (length (head categories)))
+        putStrLn (printf "Number of to-be-known words:   %8d" (length (categories !! 1)))
+        putStrLn (printf "Number of unknown-known words: %8d" (length (categories !! 2)))
+        putStrLn "\nColorizing input based on given boundaries..."
         let colorizedLines = map (linify . process categories) (lines inputText)
         let outputFilename = "colorized.html"
         writeFile outputFilename (htmlize (unlines colorizedLines))
-        putStrLn (printf "Output written to %s" outputFilename)
+        putStrLn (printf "\nDone. Output written to %s" outputFilename)
 
 tokenize :: String -> Set.Set String
 tokenize text = Set.fromList uppercaseWords
