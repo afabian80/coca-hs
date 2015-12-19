@@ -16,29 +16,36 @@ main = do
 
 processInputFile :: FilePath -> String -> String -> IO ()
 processInputFile inputFile knownBoundaryText targetBoundaryText = do
-        putStrLn (printf "Upper boundary of known words: %s-K" knownBoundaryText)
-        putStrLn (printf "Upper boundary of to-be-known words: %s-K" targetBoundaryText)
+        putStrLn (printf "Upper boundary of known words:       %3s-K" knownBoundaryText)
+        putStrLn (printf "Upper boundary of to-be-known words: %3s-K" targetBoundaryText)
         putStrLn "\nLoading database and input files...\n"
+
         let knownBoundary = read knownBoundaryText :: Int
         let targetBoundary = read targetBoundaryText :: Int
+
         let dbDir = "cocadb"
         dbFileNames <- getDirectoryContents dbDir
         let dbRelativeNames = map ((dbDir ++ "/") ++) dbFileNames
         dbFileStatuses <- mapM getFileStatus dbRelativeNames
         let fileStatusPairs = zip dbFileNames (map isRegularFile dbFileStatuses)
         let regularDbFiles = [f | (f,st) <- fileStatusPairs, st]
+
         inputText <- readFile inputFile
         let inputSet = tokenize inputText
+
         knownWordSet <- loadSetFromRange dbDir 1 knownBoundary
-        targetWordSet <- loadSetFromRange dbDir (knownBoundary + 1) targetBoundary
-        niceToHaveWordSet <- loadSetFromRange dbDir (targetBoundary + 1) (length regularDbFiles)
-        let categories = [
-                Set.intersection inputSet knownWordSet,
-                Set.intersection inputSet targetWordSet,
-                Set.intersection inputSet niceToHaveWordSet]
-        putStrLn (printf "Number of known words:         %8d" (length (head categories)))
-        putStrLn (printf "Number of to-be-known words:   %8d" (length (categories !! 1)))
-        putStrLn (printf "Number of unknown-known words: %8d" (length (categories !! 2)))
+        toBeKnownWordSet <- loadSetFromRange dbDir (knownBoundary + 1) targetBoundary
+        ignoredWordSet <- loadSetFromRange dbDir (targetBoundary + 1) (length regularDbFiles)
+
+        let knownWordsInInput = Set.intersection inputSet knownWordSet
+        let toBeKnownWordsInInput = Set.intersection inputSet toBeKnownWordSet
+        let ignoredWordsInInput = Set.intersection inputSet ignoredWordSet
+
+        let categories = [knownWordsInInput, toBeKnownWordsInInput, ignoredWordsInInput]
+        putStrLn (printf "Number of known words:         %8d" (length knownWordsInInput))
+        putStrLn (printf "Number of to-be-known words:   %8d" (length toBeKnownWordsInInput))
+        putStrLn (printf "Number of ignored words:       %8d" (length ignoredWordsInInput))
+
         putStrLn "\nColorizing input based on given boundaries..."
         let colorizedLines = map (linify . process categories) (lines inputText)
         let outputFilename = "colorized.html"
@@ -99,7 +106,7 @@ colorize [] _ = []
 colorize xs categories
         | map toUpper xs `elem` head categories = xs
         | map toUpper xs `elem` (categories !! 1) = decorate xs "to-be-known"
-        | map toUpper xs `elem` (categories !! 2) = decorate xs "unknown"
+        | map toUpper xs `elem` (categories !! 2) = decorate xs "ignored"
         | otherwise = decorate xs "not-found"
 
 decorate :: String -> String -> String
