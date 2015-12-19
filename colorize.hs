@@ -43,6 +43,7 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
 
         let categories = [knownWordsInInput, toBeKnownWordsInInput, ignoredWordsInInput]
         let notFoundWordsInInput = Set.difference inputSet (Set.unions categories)
+
         putStrLn (printf "Number of input words:         %8d" (length inputSet))
         putStrLn (printf "Number of known words:         %8d" (length knownWordsInInput))
         putStrLn (printf "Number of to-be-known words:   %8d" (length toBeKnownWordsInInput))
@@ -50,6 +51,7 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
         putStrLn (printf "Number of not-found words:     %8d" (length notFoundWordsInInput))
 
         putStrLn "\nColorizing input based on given boundaries..."
+
         let colorizedLines = map (linify . process categories) (lines inputText)
         let outputFilename = "colorized.html"
         writeFile outputFilename (htmlize (unlines colorizedLines))
