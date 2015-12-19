@@ -44,19 +44,35 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
         let categories = [knownWordsInInput, toBeKnownWordsInInput, ignoredWordsInInput]
         let notFoundWordsInInput = Set.difference inputSet (Set.unions categories)
 
+        let inputSize = length inputSet
+        let knownSize = length knownWordsInInput
+        let toBeKnownSize = length toBeKnownWordsInInput
+        let ignoredSize = length ignoredWordsInInput
+        let notFoundSize = length notFoundWordsInInput
+
         let statisticsHeader = makeTable (
-                zip     [
-                        "Number of input words",
-                        "Number of known words",
-                        "Number of to-be-known words",
-                        "Number of ignored words",
-                        "Number of not-found words"]
+                zip3
                         [
-                        length inputSet,
-                        length knownWordsInInput,
-                        length toBeKnownWordsInInput,
-                        length ignoredWordsInInput,
-                        length notFoundWordsInInput])
+                                "Number of input words",
+                                "Number of known words",
+                                "Number of to-be-known words",
+                                "Number of ignored words",
+                                "Number of not-found words"
+                        ]
+                        [
+                                inputSize,
+                                knownSize,
+                                toBeKnownSize,
+                                ignoredSize,
+                                notFoundSize
+                        ]
+                        [
+                                fromIntegral inputSize / fromIntegral inputSize,
+                                fromIntegral knownSize / fromIntegral inputSize,
+                                fromIntegral toBeKnownSize / fromIntegral inputSize,
+                                fromIntegral ignoredSize / fromIntegral inputSize,
+                                fromIntegral notFoundSize / fromIntegral inputSize
+                        ])
 
         putStrLn "\nColorizing input based on given boundaries..."
 
@@ -107,10 +123,19 @@ includeWordList name wordSet =
         ++ unlines (map (\word -> "<li>" ++ map toLower word ++ "</li>") (Set.toAscList wordSet))
         ++ "</ol>"
 
-makeTable :: [(String, Int)] -> String
+makeTable :: [(String, Int, Double)] -> String
 makeTable pairs =
         "<table>"
-        ++ unlines (map (\(name, value) -> "<tr><td>" ++ name ++ "</td><td class=\"stat\">" ++ show value ++ "</td></tr>") pairs)
+        ++ unlines (map
+                (\(name, value, percent) ->
+                        "<tr><td>"
+                        ++ name
+                        ++ "</td><td class=\"stat\">"
+                        ++ show value
+                        ++ "</td><td class=\"stat\">"
+                        ++ printf "%6.2f" (percent * 100.0)
+                        ++ " %</td></tr>")
+                pairs)
         ++ "</table>"
 
 popWord :: String -> String
