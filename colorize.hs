@@ -44,17 +44,33 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
         let categories = [knownWordsInInput, toBeKnownWordsInInput, ignoredWordsInInput]
         let notFoundWordsInInput = Set.difference inputSet (Set.unions categories)
 
-        putStrLn (printf "Number of input words:         %8d" (length inputSet))
-        putStrLn (printf "Number of known words:         %8d" (length knownWordsInInput))
-        putStrLn (printf "Number of to-be-known words:   %8d" (length toBeKnownWordsInInput))
-        putStrLn (printf "Number of ignored words:       %8d" (length ignoredWordsInInput))
-        putStrLn (printf "Number of not-found words:     %8d" (length notFoundWordsInInput))
+        -- putStrLn (printf "Number of input words:         %8d" (length inputSet))
+        -- putStrLn (printf "Number of known words:         %8d" (length knownWordsInInput))
+        -- putStrLn (printf "Number of to-be-known words:   %8d" (length toBeKnownWordsInInput))
+        -- putStrLn (printf "Number of ignored words:       %8d" (length ignoredWordsInInput))
+        -- putStrLn (printf "Number of not-found words:     %8d" (length notFoundWordsInInput))
+
+        let statisticsHeader = makeTable (
+                zip     [
+                        "Number of input words",
+                        "Number of known words",
+                        "Number of to-be-known words",
+                        "Number of ignored words",
+                        "Number of not-found words"]
+                        [
+                        length inputSet,
+                        length knownWordsInInput,
+                        length toBeKnownWordsInInput,
+                        length ignoredWordsInInput,
+                        length notFoundWordsInInput])
 
         putStrLn "\nColorizing input based on given boundaries..."
 
         let colorizedLines = map (linify . process categories) (lines inputText)
         let outputFilename = "colorized.html"
-        writeFile outputFilename (htmlize (unlines colorizedLines
+        writeFile outputFilename (htmlize
+                (statisticsHeader
+                ++ unlines colorizedLines
                 ++ includeWordList "To Be Known Words" toBeKnownWordsInInput
                 ++ includeWordList "Ignored Words" ignoredWordsInInput
                 ++ includeWordList "Not Found Words" notFoundWordsInInput
@@ -86,9 +102,9 @@ linify :: String -> String
 linify xs = "<p>" ++ xs ++ "</p>"
 
 htmlize :: String -> String
-htmlize xs = "<html>\n<head>\n" ++
+htmlize bodyText = "<html>\n<head>\n" ++
         "<link rel=\"stylesheet\" type=\"text/css\" href=\"colors.css\">\n" ++
-        "</head>\n<body>\n" ++ xs ++ "\n</body>\n</html>"
+        "</head>\n<body>\n" ++ bodyText ++ "\n</body>\n</html>"
 
 includeWordList :: String -> Set.Set String -> String
 includeWordList name wordSet =
@@ -96,6 +112,12 @@ includeWordList name wordSet =
         ++ "<ol>\n"
         ++ unlines (map (\word -> "<li>" ++ map toLower word ++ "</li>") (Set.toAscList wordSet))
         ++ "</ol>"
+
+makeTable :: [(String, Int)] -> String
+makeTable pairs =
+        "<table>"
+        ++ unlines (map (\(name, value) -> "<tr><td>" ++ name ++ "</td><td class=\"stat\">" ++ show value ++ "</td></tr>") pairs)
+        ++ "</table>"
 
 popWord :: String -> String
 popWord = takeWhile isAlpha

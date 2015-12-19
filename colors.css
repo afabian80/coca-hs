@@ -9,3 +9,11 @@
 .not-found {
         background-color:Plum;
 }
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td.stat {
+        text-align: right;
+}
