@@ -5,7 +5,16 @@ import Text.Printf (printf)
 import Data.List.Split (splitWhen)
 import System.Directory (getDirectoryContents)
 import System.Posix.Files (getFileStatus, isRegularFile)
-import Data.List (zip4)
+import Data.List (zip5)
+
+toBeKnownAnchor :: String
+toBeKnownAnchor = "to-be-known"
+
+ignoredAnchor :: String
+ignoredAnchor = "ignored"
+
+notFoundAnchor :: String
+notFoundAnchor = "not-found"
 
 main :: IO ()
 main = do
@@ -52,7 +61,7 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
         let notFoundSize = length notFoundWordsInInput
 
         let statisticsHeader = makeTable (
-                zip4
+                zip5
                         [
                                 "Number of input words",
                                 "Number of known words",
@@ -77,9 +86,16 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
                         [
                                 "normal",
                                 "normal",
-                                "to-be-known",
-                                "ignored",
-                                "not-found"
+                                toBeKnownAnchor,
+                                ignoredAnchor,
+                                notFoundAnchor
+                        ]
+                        [
+                                "",
+                                "",
+                                toBeKnownAnchor,
+                                ignoredAnchor,
+                                notFoundAnchor
                         ]
                         )
 
@@ -90,9 +106,9 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
         writeFile outputFilename (htmlize
                 (statisticsHeader
                 ++ unlines colorizedLines
-                ++ includeWordList "To Be Known Words" toBeKnownWordsInInput
-                ++ includeWordList "Ignored Words" ignoredWordsInInput
-                ++ includeWordList "Not Found Words" notFoundWordsInInput
+                ++ includeWordList "To Be Known Words" toBeKnownAnchor toBeKnownWordsInInput
+                ++ includeWordList "Ignored Words" ignoredAnchor ignoredWordsInInput
+                ++ includeWordList "Not Found Words" notFoundAnchor notFoundWordsInInput
                 ))
         putStrLn (printf "\nDone. Output written to %s" outputFilename)
 
@@ -125,26 +141,30 @@ htmlize bodyText = "<html>\n<head>\n" ++
         "<link rel=\"stylesheet\" type=\"text/css\" href=\"colors.css\">\n" ++
         "</head>\n<body>\n" ++ bodyText ++ "\n</body>\n</html>"
 
-includeWordList :: String -> Set.Set String -> String
-includeWordList name wordSet =
-        "\n\n<h1>" ++ name ++ "</h1>\n"
+includeWordList :: String -> String -> Set.Set String -> String
+includeWordList name anchor wordSet =
+        "\n\n<h1>"
+        ++ "<a name=\"" ++ anchor ++ "\"></a>"
+        ++ name ++ "</h1>\n"
         ++ "<ol>\n"
         ++ unlines (map (\word -> "<li>" ++ map toLower word ++ "</li>") (Set.toAscList wordSet))
         ++ "</ol>"
 
-makeTable :: [(String, Int, Double, String)] -> String
-makeTable quads =
+makeTable :: [(String, Int, Double, String, String)] -> String
+makeTable quints =
         "<table>"
         ++ unlines (map
-                (\(name, value, percent, style) ->
+                (\(name, value, percent, style, href) ->
                         "<tr><td class=\"" ++ style ++ "\">"
                         ++ name
                         ++ "</td><td class=\"stat\">"
+                        ++ (if (not . null) href then "<a href=\"#" ++ href ++ "\">" else "")
                         ++ show value
+                        ++ (if (not . null) href then "</a>" else "")
                         ++ "</td><td class=\"stat\">"
                         ++ printf "%6.2f" (percent * 100.0)
                         ++ " %</td></tr>")
-                quads)
+                quints)
         ++ "</table>"
 
 popWord :: String -> String
@@ -171,9 +191,9 @@ colorize :: String -> [Set.Set String] -> String
 colorize [] _ = []
 colorize xs categories
         | map toUpper xs `elem` head categories = xs
-        | map toUpper xs `elem` (categories !! 1) = decorate xs "to-be-known"
-        | map toUpper xs `elem` (categories !! 2) = decorate xs "ignored"
-        | otherwise = decorate xs "not-found"
+        | map toUpper xs `elem` (categories !! 1) = decorate xs toBeKnownAnchor
+        | map toUpper xs `elem` (categories !! 2) = decorate xs ignoredAnchor
+        | otherwise = decorate xs notFoundAnchor
 
 decorate :: String -> String -> String
 decorate xs cssClass = "<span class=\"" ++ cssClass ++ "\">" ++ xs ++ "</span>"
