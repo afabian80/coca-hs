@@ -4,20 +4,27 @@ import qualified Data.Set as Set
 import Text.Printf (printf)
 import Data.List.Split (splitWhen)
 
+maxDBNumber :: Int
+maxDBNumber = 34
+
 main :: IO ()
 main = do
         args <- getArgs
         case args of
-                [inputFile] -> processInputFile inputFile
-                _ -> putStrLn "Error: input argument missing"
+                [inputFile, knownBoundary, targetBoundary] ->
+                        processInputFile inputFile knownBoundary targetBoundary
+                _ -> putStrLn "Use parameters: <inputfile> <max-known> <max-to-be-known>"
 
-processInputFile :: FilePath -> IO ()
-processInputFile inputFile = do
+processInputFile :: FilePath -> String -> String -> IO ()
+processInputFile inputFile knownBoundaryText targetBoundaryText = do
+        --putStrLn "Colorizing input based on given boundaries..."
+        let knownBoundary = read knownBoundaryText :: Int
+        let targetBoundary = read targetBoundaryText :: Int
         inputText <- readFile inputFile
         let inputSet = tokenize inputText
-        knownWordSet <- loadSetFromRange 1 4
-        targetWordSet <- loadSetFromRange 5 8
-        niceToHaveWordSet <- loadSetFromRange 9 34
+        knownWordSet <- loadSetFromRange 1 knownBoundary
+        targetWordSet <- loadSetFromRange (knownBoundary + 1) targetBoundary
+        niceToHaveWordSet <- loadSetFromRange (targetBoundary + 1) maxDBNumber
         let categories = [
                 Set.intersection inputSet knownWordSet,
                 Set.intersection inputSet targetWordSet,
