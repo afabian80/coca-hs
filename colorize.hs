@@ -10,6 +10,15 @@ maxDBNumber = 34
 outputFilename :: String
 outputFilename = "colorized.html"
 
+colorForTargetWords :: String
+colorForTargetWords = "LightGreen"
+
+colorForUnknownWords :: String
+colorForUnknownWords = "DarkSalmon"
+
+colorForNiceToHaveWords :: String
+colorForNiceToHaveWords = "Plum"
+
 main :: IO ()
 main = do
         args <- getArgs
@@ -66,15 +75,6 @@ linify xs = "<p>" ++ xs ++ "</p>"
 htmlize :: String -> String
 htmlize xs = "<html>\n<body>\n" ++ xs ++ "\n</body>\n</html>"
 
-colorForTargetWords :: String
-colorForTargetWords = "LightGreen"
-
-colorForUnknownWords :: String
-colorForUnknownWords = "DarkSalmon"
-
-colorForNiceToHaveWords :: String
-colorForNiceToHaveWords = "Plum"
-
 popWord :: String -> String
 popWord = takeWhile isAlpha
 
@@ -88,12 +88,12 @@ process :: [Set.Set String] -> String -> String
 process _ [] = []
 process categories xs =
         colorize headWord categories ++
-        nonWordAfterHead ++
-        process categories tailWords
+        charsTillNextWord ++
+        process categories tailText
         where
                 headWord = popWord xs
-                nonWordAfterHead = copyTillWord $ skipWord xs
-                tailWords = drop (length headWord + length nonWordAfterHead) xs
+                charsTillNextWord = copyTillWord $ skipWord xs
+                tailText = drop (length headWord + length charsTillNextWord) xs
 
 colorize :: String -> [Set.Set String] -> String
 colorize [] _ = []
