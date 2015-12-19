@@ -1,6 +1,7 @@
 import System.Environment (getArgs)
 import Data.Char (isAlpha, toUpper)
 import qualified Data.Set as Set
+import Text.Printf (printf)
 
 main :: IO ()
 main = do
@@ -12,15 +13,29 @@ main = do
 processInputFile :: FilePath -> IO ()
 processInputFile inputFile = do
         inputText <- readFile inputFile
-        knownWordsText <- readFile "cocadb/knownwords.txt"
-        targetedWordsText <- readFile "cocadb/targetedwords.txt"
-        niceToHaveWordsText <- readFile "cocadb/nicetohavewords.txt"
-        let knownWordSet = Set.fromList (words knownWordsText)
-        let targetWordSet = Set.fromList (words targetedWordsText)
-        let niceToHaveWordSet = Set.fromList (words niceToHaveWordsText)
+        knownWordSet <- loadSetFromRange 1 4
+        targetWordSet <- loadSetFromRange 5 8
+        niceToHaveWordSet <- loadSetFromRange 9 34
         let categories = [knownWordSet, targetWordSet, niceToHaveWordSet]
         let colorizedLines = map (linify . process categories) (lines inputText)
         putStrLn $ htmlize (unlines colorizedLines)
+
+loadSetFromRange :: Int -> Int -> IO (Set.Set String)
+loadSetFromRange lo hi = do
+        let fileNames = generateFileNames lo hi
+        sets <- mapM loadSet fileNames
+        return (Set.unions sets)
+
+generateFileNames :: Int -> Int -> [String]
+generateFileNames lo hi =
+        map (printf "cocadb/basewrd%02d.txt") [lo..hi]
+
+loadSet :: String -> IO (Set.Set String)
+loadSet path = do
+        fileText <- readFile path
+        let wordSet = Set.fromList (words fileText)
+        return wordSet
+
 
 linify :: String -> String
 linify xs = "<p>" ++ xs ++ "</p>"
