@@ -5,6 +5,7 @@ import Text.Printf (printf)
 import Data.List.Split (splitWhen)
 import System.Directory (getDirectoryContents)
 import System.Posix.Files (getFileStatus, isRegularFile)
+import Data.List (zip4)
 
 main :: IO ()
 main = do
@@ -18,7 +19,7 @@ processInputFile :: FilePath -> String -> String -> IO ()
 processInputFile inputFile knownBoundaryText targetBoundaryText = do
         putStrLn (printf "Upper boundary of known words:       %3s-K" knownBoundaryText)
         putStrLn (printf "Upper boundary of to-be-known words: %3s-K" targetBoundaryText)
-        putStrLn "\nLoading database and input files...\n"
+        putStrLn "\nLoading database and input files..."
 
         let knownBoundary = read knownBoundaryText :: Int
         let targetBoundary = read targetBoundaryText :: Int
@@ -51,7 +52,7 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
         let notFoundSize = length notFoundWordsInInput
 
         let statisticsHeader = makeTable (
-                zip3
+                zip4
                         [
                                 "Number of input words",
                                 "Number of known words",
@@ -72,9 +73,17 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
                                 fromIntegral toBeKnownSize / fromIntegral inputSize,
                                 fromIntegral ignoredSize / fromIntegral inputSize,
                                 fromIntegral notFoundSize / fromIntegral inputSize
-                        ])
+                        ]
+                        [
+                                "normal",
+                                "normal",
+                                "to-be-known",
+                                "ignored",
+                                "not-found"
+                        ]
+                        )
 
-        putStrLn "\nColorizing input based on given boundaries..."
+        putStrLn "Colorizing input based on given boundaries..."
 
         let colorizedLines = map (linify . process categories) (lines inputText)
         let outputFilename = "colorized.html"
@@ -123,19 +132,19 @@ includeWordList name wordSet =
         ++ unlines (map (\word -> "<li>" ++ map toLower word ++ "</li>") (Set.toAscList wordSet))
         ++ "</ol>"
 
-makeTable :: [(String, Int, Double)] -> String
-makeTable pairs =
+makeTable :: [(String, Int, Double, String)] -> String
+makeTable quads =
         "<table>"
         ++ unlines (map
-                (\(name, value, percent) ->
-                        "<tr><td>"
+                (\(name, value, percent, style) ->
+                        "<tr><td class=\"" ++ style ++ "\">"
                         ++ name
                         ++ "</td><td class=\"stat\">"
                         ++ show value
                         ++ "</td><td class=\"stat\">"
                         ++ printf "%6.2f" (percent * 100.0)
                         ++ " %</td></tr>")
-                pairs)
+                quads)
         ++ "</table>"
 
 popWord :: String -> String
