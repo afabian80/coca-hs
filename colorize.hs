@@ -2,6 +2,7 @@ import System.Environment (getArgs)
 import Data.Char (isAlpha, toUpper)
 import qualified Data.Set as Set
 import Text.Printf (printf)
+import Data.List.Split (splitWhen)
 
 main :: IO ()
 main = do
@@ -13,12 +14,21 @@ main = do
 processInputFile :: FilePath -> IO ()
 processInputFile inputFile = do
         inputText <- readFile inputFile
+        let inputSet = tokenize inputText
         knownWordSet <- loadSetFromRange 1 4
         targetWordSet <- loadSetFromRange 5 8
         niceToHaveWordSet <- loadSetFromRange 9 34
-        let categories = [knownWordSet, targetWordSet, niceToHaveWordSet]
+        let categories = [
+                Set.intersection inputSet knownWordSet,
+                Set.intersection inputSet targetWordSet,
+                Set.intersection inputSet niceToHaveWordSet]
         let colorizedLines = map (linify . process categories) (lines inputText)
         putStrLn $ htmlize (unlines colorizedLines)
+
+tokenize :: String -> Set.Set String
+tokenize text = Set.fromList uppercaseWords
+        where
+                uppercaseWords = splitWhen (not . isAlpha) (map toUpper text)
 
 loadSetFromRange :: Int -> Int -> IO (Set.Set String)
 loadSetFromRange lo hi = do
