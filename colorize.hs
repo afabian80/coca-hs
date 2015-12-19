@@ -1,5 +1,5 @@
 import System.Environment (getArgs)
-import Data.Char (isAlpha, toUpper)
+import Data.Char (isAlpha, toUpper, toLower)
 import qualified Data.Set as Set
 import Text.Printf (printf)
 import Data.List.Split (splitWhen)
@@ -54,7 +54,11 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
 
         let colorizedLines = map (linify . process categories) (lines inputText)
         let outputFilename = "colorized.html"
-        writeFile outputFilename (htmlize (unlines colorizedLines))
+        writeFile outputFilename (htmlize (unlines colorizedLines
+                ++ includeWordList "To Be Known Words" toBeKnownWordsInInput
+                ++ includeWordList "Ignored Words" ignoredWordsInInput
+                ++ includeWordList "Not Found Words" notFoundWordsInInput
+                ))
         putStrLn (printf "\nDone. Output written to %s" outputFilename)
 
 tokenize :: String -> Set.Set String
@@ -85,6 +89,13 @@ htmlize :: String -> String
 htmlize xs = "<html>\n<head>\n" ++
         "<link rel=\"stylesheet\" type=\"text/css\" href=\"colors.css\">\n" ++
         "</head>\n<body>\n" ++ xs ++ "\n</body>\n</html>"
+
+includeWordList :: String -> Set.Set String -> String
+includeWordList name wordSet =
+        "\n\n<h1>" ++ name ++ "</h1>\n"
+        ++ "<ol>\n"
+        ++ unlines (map (\word -> "<li>" ++ map toLower word ++ "</li>") (Set.toAscList wordSet))
+        ++ "</ol>"
 
 popWord :: String -> String
 popWord = takeWhile isAlpha
