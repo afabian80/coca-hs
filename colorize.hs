@@ -7,6 +7,9 @@ import Data.List.Split (splitWhen)
 maxDBNumber :: Int
 maxDBNumber = 34
 
+outputFilename :: String
+outputFilename = "colorized.html"
+
 main :: IO ()
 main = do
         args <- getArgs
@@ -17,7 +20,9 @@ main = do
 
 processInputFile :: FilePath -> String -> String -> IO ()
 processInputFile inputFile knownBoundaryText targetBoundaryText = do
-        --putStrLn "Colorizing input based on given boundaries..."
+        putStrLn "Colorizing input based on given boundaries..."
+        putStrLn (printf "Upper boundary of known words: %s-K" knownBoundaryText)
+        putStrLn (printf "Upper boundary of to-be-known words: %s-K" targetBoundaryText)
         let knownBoundary = read knownBoundaryText :: Int
         let targetBoundary = read targetBoundaryText :: Int
         inputText <- readFile inputFile
@@ -30,7 +35,8 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
                 Set.intersection inputSet targetWordSet,
                 Set.intersection inputSet niceToHaveWordSet]
         let colorizedLines = map (linify . process categories) (lines inputText)
-        putStrLn $ htmlize (unlines colorizedLines)
+        writeFile outputFilename (htmlize (unlines colorizedLines))
+        putStrLn (printf "Output written to %s" outputFilename)
 
 tokenize :: String -> Set.Set String
 tokenize text = Set.fromList uppercaseWords
