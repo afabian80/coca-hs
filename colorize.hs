@@ -10,22 +10,13 @@ maxDBNumber = 34
 outputFilename :: String
 outputFilename = "colorized.html"
 
-colorForTargetWords :: String
-colorForTargetWords = "LightGreen"
-
-colorForUnknownWords :: String
-colorForUnknownWords = "DarkSalmon"
-
-colorForNiceToHaveWords :: String
-colorForNiceToHaveWords = "Plum"
-
 main :: IO ()
 main = do
         args <- getArgs
         case args of
                 [inputFile, knownBoundary, targetBoundary] ->
                         processInputFile inputFile knownBoundary targetBoundary
-                _ -> putStrLn "Use parameters: <inputfile> <max-known> <max-to-be-known>"
+                _ -> putStrLn "Use parameters: <inputfile> <known> <to-be-known>"
 
 processInputFile :: FilePath -> String -> String -> IO ()
 processInputFile inputFile knownBoundaryText targetBoundaryText = do
@@ -68,12 +59,13 @@ loadSet path = do
         let wordSet = Set.fromList (words fileText)
         return wordSet
 
-
 linify :: String -> String
 linify xs = "<p>" ++ xs ++ "</p>"
 
 htmlize :: String -> String
-htmlize xs = "<html>\n<body>\n" ++ xs ++ "\n</body>\n</html>"
+htmlize xs = "<html>\n<head>\n" ++
+        "<link rel=\"stylesheet\" type=\"text/css\" href=\"colors.css\">\n" ++
+        "</head>\n<body>\n" ++ xs ++ "\n</body>\n</html>"
 
 popWord :: String -> String
 popWord = takeWhile isAlpha
@@ -99,9 +91,9 @@ colorize :: String -> [Set.Set String] -> String
 colorize [] _ = []
 colorize xs categories
         | map toUpper xs `elem` head categories = xs
-        | map toUpper xs `elem` (categories !! 1) = decorate xs colorForTargetWords
-        | map toUpper xs `elem` (categories !! 2) = decorate xs colorForNiceToHaveWords
-        | otherwise = decorate xs colorForUnknownWords
+        | map toUpper xs `elem` (categories !! 1) = decorate xs "to-be-known"
+        | map toUpper xs `elem` (categories !! 2) = decorate xs "unknown"
+        | otherwise = decorate xs "not-found"
 
 decorate :: String -> String -> String
-decorate xs tag = "<span style=\"background-color:" ++ tag ++ "\">" ++ xs ++ "</span>"
+decorate xs cssClass = "<span class=\"" ++ cssClass ++ "\">" ++ xs ++ "</span>"
