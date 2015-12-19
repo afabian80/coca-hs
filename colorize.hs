@@ -26,9 +26,7 @@ main = do
 
 processInputFile :: FilePath -> String -> String -> IO ()
 processInputFile inputFile knownBoundaryText targetBoundaryText = do
-        putStrLn (printf "Upper boundary of known words:       %3s-K" knownBoundaryText)
-        putStrLn (printf "Upper boundary of to-be-known words: %3s-K" targetBoundaryText)
-        putStrLn "\nLoading database and input files..."
+        putStrLn "Loading database and input files..."
 
         let knownBoundary = read knownBoundaryText :: Int
         let targetBoundary = read targetBoundaryText :: Int
@@ -59,6 +57,8 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
         let toBeKnownSize = length toBeKnownWordsInInput
         let ignoredSize = length ignoredWordsInInput
         let notFoundSize = length notFoundWordsInInput
+
+        let summaryHeader = makeHeader inputFile knownBoundary targetBoundary
 
         let statisticsHeader = makeTable (
                 zip5
@@ -104,13 +104,14 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
         let colorizedLines = map (linify . process categories) (lines inputText)
         let outputFilename = "colorized.html"
         writeFile outputFilename (htmlize
-                (statisticsHeader
+                (summaryHeader
+                ++ statisticsHeader
                 ++ unlines colorizedLines
                 ++ includeWordList "To Be Known Words" toBeKnownAnchor toBeKnownWordsInInput
                 ++ includeWordList "Ignored Words" ignoredAnchor ignoredWordsInInput
                 ++ includeWordList "Not Found Words" notFoundAnchor notFoundWordsInInput
                 ))
-        putStrLn (printf "\nDone. Output written to %s" outputFilename)
+        putStrLn (printf "Done. Output written to %s" outputFilename)
 
 tokenize :: String -> Set.Set String
 tokenize text = Set.fromList uppercaseWords
@@ -165,7 +166,10 @@ makeTable quints =
                         ++ printf "%6.2f" (percent * 100.0)
                         ++ " %</td></tr>")
                 quints)
-        ++ "</table>"
+        ++ "</table><hr/>"
+
+makeHeader :: FilePath -> Int -> Int -> String
+makeHeader = printf "<h1>%s</h1>\n<p>Known words: %dK, target words: %dK.</p>"
 
 popWord :: String -> String
 popWord = takeWhile isAlpha
