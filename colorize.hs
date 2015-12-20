@@ -144,20 +144,18 @@ htmlize bodyText = "<html>\n<head>\n" ++
 
 includeWordListSection :: String -> String -> Set.Set String -> String
 includeWordListSection name anchor wordSet =
-        wrapHtmlTag "h1" headerText ++ wrapHtmlOrderedList listText
+        wrapHtmlTag "h1" headerText [] ++ wrapHtmlOrderedList listText
         where
-                headerText = wrapHtmlTagWithAttributes "a" "" [("name", anchor)] ++ name
+                headerText = wrapHtmlTag "a" "" [("name", anchor)] ++ name
                 listText = unlines $ map (wrapHtmlListItem . lowerWord) listEntries
                 listEntries = Set.toAscList wordSet
-                wrapHtmlOrderedList = wrapHtmlTag "ol"
-                wrapHtmlListItem = wrapHtmlTag "li"
+                wrapHtmlOrderedList xs = wrapHtmlTag "ol" xs []
+                wrapHtmlListItem xs = wrapHtmlTag "li" (linkedWord xs) []
+                linkedWord xs = wrapHtmlTag "a" xs [("href", "http://www.vocabulary.com/dictionary/" ++ xs)]
                 lowerWord = map toLower
 
-wrapHtmlTag :: String -> String -> String
-wrapHtmlTag tag value = printf "<%s>%s</%s>\n" tag value tag
-
-wrapHtmlTagWithAttributes :: String -> String -> [(String, String)] -> String
-wrapHtmlTagWithAttributes tag value attributes =
+wrapHtmlTag :: String -> String -> [(String, String)] -> String
+wrapHtmlTag tag value attributes =
         printf "<%s %s>%s</%s>\n" tag attributeText value tag
         where
                 attributeText = unwords [aName ++ "=" ++ aValue | (aName,aValue) <- attributes]
