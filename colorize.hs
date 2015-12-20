@@ -138,9 +138,17 @@ linify :: String -> String
 linify xs = "<p>" ++ xs ++ "</p>"
 
 htmlize :: String -> String
-htmlize bodyText = "<html>\n<head>\n" ++
-        "<link rel=\"stylesheet\" type=\"text/css\" href=\"colors.css\">\n" ++
-        "</head>\n<body>\n" ++ bodyText ++ "\n</body>\n</html>"
+htmlize bodyText =
+        wrapHtmlTag "html" htmlSection []
+        where
+                htmlSection =
+                        wrapHtmlTag "head" headSection [] ++ wrapHtmlTag "body" bodyText []
+                headSection =
+                        wrapHtmlTag "link" "" [
+                                ("rel", "stylesheet"),
+                                ("type", "text/css"),
+                                ("href", "colors.css")
+                                ]
 
 includeWordListSection :: String -> String -> Set.Set String -> String
 includeWordListSection name anchor wordSet =
