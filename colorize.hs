@@ -107,9 +107,9 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
                 (summaryHeader
                 ++ statisticsHeader
                 ++ unlines colorizedLines
-                ++ includeWordList "To Be Known Words" toBeKnownAnchor toBeKnownWordsInInput
-                ++ includeWordList "Ignored Words" ignoredAnchor ignoredWordsInInput
-                ++ includeWordList "Not Found Words" notFoundAnchor notFoundWordsInInput
+                ++ includeWordListSection "To Be Known Words" toBeKnownAnchor toBeKnownWordsInInput
+                ++ includeWordListSection "Ignored Words" ignoredAnchor ignoredWordsInInput
+                ++ includeWordListSection "Not Found Words" notFoundAnchor notFoundWordsInInput
                 ))
         putStrLn (printf "Done. Output written to %s" outputFilename)
 
@@ -142,14 +142,25 @@ htmlize bodyText = "<html>\n<head>\n" ++
         "<link rel=\"stylesheet\" type=\"text/css\" href=\"colors.css\">\n" ++
         "</head>\n<body>\n" ++ bodyText ++ "\n</body>\n</html>"
 
-includeWordList :: String -> String -> Set.Set String -> String
-includeWordList name anchor wordSet =
-        "\n\n<h1>"
-        ++ "<a name=\"" ++ anchor ++ "\"></a>"
-        ++ name ++ "</h1>\n"
-        ++ "<ol>\n"
-        ++ unlines (map (\word -> "<li>" ++ map toLower word ++ "</li>") (Set.toAscList wordSet))
-        ++ "</ol>"
+includeWordListSection :: String -> String -> Set.Set String -> String
+includeWordListSection name anchor wordSet =
+        wrapHtmlTag "h1" headerText ++ wrapHtmlOrderedList listText
+        where
+                headerText = wrapHtmlTagWithAttributes "a" "" [("name", anchor)] ++ name
+                listText = unlines $ map (wrapHtmlListItem . lowerWord) listEntries
+                listEntries = Set.toAscList wordSet
+                wrapHtmlOrderedList = wrapHtmlTag "ol"
+                wrapHtmlListItem = wrapHtmlTag "li"
+                lowerWord = map toLower
+
+wrapHtmlTag :: String -> String -> String
+wrapHtmlTag tag value = printf "<%s>%s</%s>\n" tag value tag
+
+wrapHtmlTagWithAttributes :: String -> String -> [(String, String)] -> String
+wrapHtmlTagWithAttributes tag value attributes =
+        printf "<%s %s>%s</%s>\n" tag attributeText value tag
+        where
+                attributeText = unwords [aName ++ "=" ++ aValue | (aName,aValue) <- attributes]
 
 makeTable :: [(String, Int, Double, String, String)] -> String
 makeTable quints =
