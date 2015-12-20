@@ -135,7 +135,7 @@ loadSet path = do
         return wordSet
 
 linify :: String -> String
-linify xs = "<p>" ++ xs ++ "</p>"
+linify xs = wrapHtmlTag "p" xs []
 
 htmlize :: String -> String
 htmlize bodyText =
