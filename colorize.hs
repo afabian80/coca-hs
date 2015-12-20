@@ -102,7 +102,7 @@ processInputFile inputFile knownBoundaryText targetBoundaryText = do
         putStrLn "Colorizing input based on given boundaries..."
 
         let colorizedLines = map (linify . process categories) (lines inputText)
-        let outputFilename = "colorized.html"
+        let outputFilename = "index.html"
         writeFile outputFilename (htmlize
                 (summaryHeader
                 ++ statisticsHeader
@@ -147,7 +147,7 @@ htmlize bodyText =
                         wrapHtmlTag "link" "" [
                                 ("rel", "stylesheet"),
                                 ("type", "text/css"),
-                                ("href", "colors.css")
+                                ("href", "style.css")
                                 ]
 
 includeWordListSection :: String -> String -> Set.Set String -> String
