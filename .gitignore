@@ -16,3 +16,4 @@ cabal.sandbox.config
 *.hp
 /index.html
 /colorize
+/*.htmlz
