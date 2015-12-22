@@ -1,4 +1,5 @@
 import Data.Char (isAlpha, toUpper)
+import Data.List (isInfixOf)
 
 main :: IO ()
 --main = print $ parse "<html>Hello, <bold>world</bold>!</html>"
@@ -10,9 +11,12 @@ parse = parseRecurse False
 
 parseRecurse :: Bool -> String -> String
 parseRecurse _ [] = []
-parseRecurse inBody xs = headWord ++ keepHtmlTag ++ keepNonWordChars ++ parseRecurse inBody remaining
+parseRecurse inBody xs = headWord ++ keepHtmlTag ++ keepNonWordChars ++ parseRecurse bodyReached remaining
         where
-                headWord = map toUpper $ takeWhile isAlpha xs
+                headWord =
+                        if inBody
+                                then map toUpper $ takeWhile isAlpha xs
+                                else takeWhile isAlpha xs
                 afterHeadWord = drop (length headWord) xs
 
                 keepHtmlTag = copyHtml afterHeadWord
@@ -27,3 +31,5 @@ parseRecurse inBody xs = headWord ++ keepHtmlTag ++ keepNonWordChars ++ parseRec
                 keepNonWordChars = takeWhile isNotAlphaOrTagStart afterHtmlTag
                 isNotAlphaOrTagStart c = not (isAlpha c || c == '<')
                 remaining = drop (length keepNonWordChars) afterHtmlTag
+                bodyReached = inBody || bodyInHtmlTag
+                bodyInHtmlTag = "<body" `isInfixOf` keepHtmlTag
