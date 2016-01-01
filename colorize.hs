@@ -219,7 +219,7 @@ colorize xs categories
                 upperWord = map toUpper xs
 
 isWordInCategory :: String -> Set.Set String -> Bool
-isWordInCategory word category = word `elem` category
+isWordInCategory = Set.member
 
 decorate :: String -> String -> String
 decorate xs cssClass = "<span class=\"" ++ cssClass ++ "\">" ++ xs ++ "</span>"
