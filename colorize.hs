@@ -164,7 +164,7 @@ includeWordListSection name anchor wordSet =
 
 wrapHtmlTag :: String -> String -> [(String, String)] -> String
 wrapHtmlTag tag value attributes =
-        printf "<%s %s>%s</%s>\n" tag attributeText value tag
+        "<" ++ tag ++ " " ++ attributeText ++ ">" ++ value ++ "</" ++ tag ++ ">\n"
         where
                 attributeText = unwords [aName ++ "=" ++ aValue | (aName,aValue) <- attributes]
 
