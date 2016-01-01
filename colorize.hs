@@ -211,10 +211,15 @@ process categories xs =
 colorize :: String -> [Set.Set String] -> String
 colorize [] _ = []
 colorize xs categories
-        | map toUpper xs `elem` head categories = xs
-        | map toUpper xs `elem` (categories !! 1) = decorate xs toBeKnownAnchor
-        | map toUpper xs `elem` (categories !! 2) = decorate xs ignoredAnchor
+        | isWordInCategory upperWord (head categories) = xs
+        | isWordInCategory upperWord (categories !! 1) = decorate xs toBeKnownAnchor
+        | isWordInCategory upperWord (categories !! 2) = decorate xs ignoredAnchor
         | otherwise = decorate xs notFoundAnchor
+        where
+                upperWord = map toUpper xs
+
+isWordInCategory :: String -> Set.Set String -> Bool
+isWordInCategory word category = word `elem` category
 
 decorate :: String -> String -> String
 decorate xs cssClass = "<span class=\"" ++ cssClass ++ "\">" ++ xs ++ "</span>"
