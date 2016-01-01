@@ -131,7 +131,7 @@ generateFileNames dbDir lo hi =
 loadSet :: String -> IO (Set.Set String)
 loadSet path = do
         fileText <- readFile path
-        let wordSet = Set.fromList (words fileText)
+        let wordSet = Set.fromDistinctAscList (words fileText)
         return wordSet
 
 linify :: String -> String
