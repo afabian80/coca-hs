@@ -5,62 +5,66 @@ linify
 ,wrapInHtmlSpan
 ,generateStatisticsHeader
 ,generateTable
+,TableData (TableRow)
 ) where
 
 import qualified Data.Set    as Set
 import           Data.Char   (toLower)
 import           Text.Printf (printf)
 
-wrapInHtmlTag :: String -> String -> [(String, String)] -> String
-wrapInHtmlTag tag value attributes =
-        "<" ++ tag ++ " " ++ attributeText ++ ">" ++ value ++ "</" ++ tag ++ ">\n"
+data TableData = TableRow String Int Int String String deriving (Show, Read)
+
+wrapInHtmlTag :: String -> [(String, String)] -> String -> String
+wrapInHtmlTag tag attributes text =
+        "<" ++ tag ++ " " ++ attributeText ++ ">" ++ text ++ "</" ++ tag ++ ">\n"
         where
                 attributeText = unwords [aName ++ "=" ++ aValue | (aName,aValue) <- attributes]
 
 linify :: String -> String
-linify xs = wrapInHtmlTag "p" xs []
+linify = wrapInHtmlTag "p" []
 
 wrapInHtmlBody :: String -> String
 wrapInHtmlBody bodyText =
-        wrapInHtmlTag "html" htmlSection []
+        wrapInHtmlTag "html" [] htmlSection
         where
                 htmlSection =
-                        wrapInHtmlTag "head" headSection [] ++ wrapInHtmlTag "body" bodyText []
+                        wrapInHtmlTag "head" [] headSection ++ wrapInHtmlTag "body" [] bodyText
                 headSection =
-                        wrapInHtmlTag "link" "" [
+                        wrapInHtmlTag "link" [
                                 ("rel", "stylesheet"),
                                 ("type", "text/css"),
                                 ("href", "style.css")
-                                ]
+                                ] ""
 
 generateWordListSection :: String -> String -> Set.Set String -> String
-generateWordListSection name anchor wordSet =
-        wrapInHtmlTag "h1" headerText [] ++ wrapHtmlOrderedList listText
+generateWordListSection sectionName anchor wordSet =
+        wrapInHtmlTag "h1" [] headerText ++ wrapHtmlOrderedList listText
         where
-                headerText = wrapInHtmlTag "a" "" [("name", anchor)] ++ name
+                headerText = wrapInHtmlTag "a" [("sectionName", anchor)] "" ++ sectionName
                 listText = unlines $ map (wrapHtmlListItem . lowerWord) listEntries
                 listEntries = Set.toAscList wordSet
-                wrapHtmlOrderedList xs = wrapInHtmlTag "ol" xs []
-                wrapHtmlListItem xs = wrapInHtmlTag "li" (linkedWord xs) []
-                linkedWord xs = wrapInHtmlTag "a" xs [("href", "http://www.vocabulary.com/dictionary/" ++ xs)]
+                wrapHtmlOrderedList = wrapInHtmlTag "ol" []
+                wrapHtmlListItem xs = wrapInHtmlTag "li" [] (linkedWord xs)
+                linkedWord xs = wrapInHtmlTag "a" [("href", "http://www.vocabulary.com/dictionary/" ++ xs)] xs
                 lowerWord = map toLower
 
-generateTable :: [(String, Int, Double, String, String)] -> String
-generateTable quints =
-        "<table>"
-        ++ unlines (map
-                (\(name, value, percent, style, href) ->
-                        "<tr><td class=\"" ++ style ++ "\">"
-                        ++ name
-                        ++ "</td><td class=\"stat\">"
-                        ++ (if (not . null) href then "<a href=\"#" ++ href ++ "\">" else "")
-                        ++ show value
-                        ++ (if (not . null) href then "</a>" else "")
-                        ++ "</td><td class=\"stat\">"
-                        ++ printf "%6.2f" (percent * 100.0)
-                        ++ " %</td></tr>")
-                quints)
-        ++ "</table><hr/>"
+generateTable :: [TableData] -> String
+generateTable ds = wrapInHtmlTag "table" [] (unlines (map tableDataToString ds))
+
+tableDataToString :: TableData -> String
+tableDataToString (TableRow name value allWords style anchor) =
+        "<tr><td class=\"" ++ style ++ "\">"
+        ++ name
+        ++ "</td><td class=\"stat\">"
+        ++ (if (not . null) anchor then "<a href=\"#" ++ anchor ++ "\">" else "")
+        ++ show value
+        ++ (if (not . null) anchor then "</a>" else "")
+        ++ "</td><td class=\"stat\">"
+        ++ printf "%6.2f" (percent * 100.0)
+        ++ " %</td></tr>"
+        where
+                percent :: Double
+                percent = fromIntegral value / fromIntegral allWords
 
 wrapInHtmlSpan :: String -> String -> String
 wrapInHtmlSpan xs cssClass = "<span class=\"" ++ cssClass ++ "\">" ++ xs ++ "</span>"

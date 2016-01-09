@@ -5,10 +5,10 @@ import           ColorizeCommon     (copyTillWord, isWordInCategory,
                                      loadSetFromRange, popWord, skipWord,
                                      tokenize)
 import           Data.Char          (toUpper)
-import           Data.List          (zip5)
 import           HtmlDecorator      (generateStatisticsHeader, generateTable,
                                      generateWordListSection, linify,
-                                     wrapInHtmlBody, wrapInHtmlSpan)
+                                     wrapInHtmlBody, wrapInHtmlSpan,
+                                     TableData (TableRow))
 import           System.Directory   (getDirectoryContents)
 import           System.Posix.Files (getFileStatus, isRegularFile)
 import           Text.Printf        (printf)
@@ -57,45 +57,14 @@ processInputFile inputFile inputType knownBoundary targetBoundary = do
         let notFoundSize = length notFoundWordsInInput
 
         let summaryHeader = generateStatisticsHeader inputFile knownBoundary targetBoundary
-
-        let statisticsHeader = generateTable (
-                zip5
-                        [
-                                "Number of input words",
-                                "Number of known words",
-                                "Number of to-be-known words",
-                                "Number of ignored words",
-                                "Number of not-found words"
-                        ]
-                        [
-                                inputSize,
-                                knownSize,
-                                toBeKnownSize,
-                                ignoredSize,
-                                notFoundSize
-                        ]
-                        [
-                                fromIntegral inputSize / fromIntegral inputSize,
-                                fromIntegral knownSize / fromIntegral inputSize,
-                                fromIntegral toBeKnownSize / fromIntegral inputSize,
-                                fromIntegral ignoredSize / fromIntegral inputSize,
-                                fromIntegral notFoundSize / fromIntegral inputSize
-                        ]
-                        [
-                                "normal",
-                                "normal",
-                                toBeKnownAnchor,
-                                ignoredAnchor,
-                                notFoundAnchor
-                        ]
-                        [
-                                "",
-                                "",
-                                toBeKnownAnchor,
-                                ignoredAnchor,
-                                notFoundAnchor
-                        ]
-                        )
+        let headerData = [
+                TableRow "Number of input words" inputSize inputSize "normal" "",
+                TableRow "Number of known words" knownSize inputSize "normal" "",
+                TableRow "Number of to-be-known words" toBeKnownSize inputSize toBeKnownAnchor toBeKnownAnchor,
+                TableRow "Number of ignored words" ignoredSize inputSize ignoredAnchor ignoredAnchor,
+                TableRow "Number of not-found words" notFoundSize inputSize notFoundAnchor notFoundAnchor
+                ]
+        let statisticsHeader = generateTable headerData
 
         putStrLn "Colorizing input based on given boundaries..."
 
