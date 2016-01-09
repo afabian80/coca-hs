@@ -18,7 +18,7 @@ wrapInHtmlTag :: String -> [(String, String)] -> String -> String
 wrapInHtmlTag tag attributes text =
         "<" ++ tag ++ " " ++ attributeText ++ ">" ++ text ++ "</" ++ tag ++ ">\n"
         where
-                attributeText = unwords [aName ++ "=" ++ aValue | (aName,aValue) <- attributes]
+                attributeText = unwords [aName ++ "=\"" ++ aValue ++ "\"" | (aName,aValue) <- attributes]
 
 linify :: String -> String
 linify = wrapInHtmlTag "p" []
@@ -40,7 +40,7 @@ generateWordListSection :: String -> String -> Set.Set String -> String
 generateWordListSection sectionName anchor wordSet =
         wrapInHtmlTag "h1" [] headerText ++ wrapHtmlOrderedList listText
         where
-                headerText = wrapInHtmlTag "a" [("name", "\"" ++ anchor ++ "\"")] "" ++ sectionName
+                headerText = wrapInHtmlTag "a" [("name", anchor)] "" ++ sectionName
                 listText = unlines $ map (wrapHtmlListItem . lowerWord) listEntries
                 listEntries = Set.toAscList wordSet
                 wrapHtmlOrderedList = wrapInHtmlTag "ol" []
@@ -57,18 +57,19 @@ tableDataToString (TableRow name value allWords style anchor) =
         where
                 tableRowText =
                         wrapInHtmlTag "td" [("class", style)] name
-                        ++ "<td class=\"stat\">"
-                        ++ (if (not . null) anchor then "<a href=\"#" ++ anchor ++ "\">" else "")
-                        ++ show value
-                        ++ (if (not . null) anchor then "</a>" else "")
-                        ++ "</td><td class=\"stat\">"
-                        ++ printf "%6.2f" (percent * 100.0)
-                        ++ " %</td>"
+                        ++ wrapInHtmlTag "td" [("class", "stat")] wordCountText
+                        ++ wrapInHtmlTag "td" [("class", "stat")] percentText
                 percent :: Double
                 percent = fromIntegral value / fromIntegral allWords
+                percentText = printf "%6.2f" (percent * 100.0) ++ " %"
+                wordCountText =
+                        if (not . null) anchor
+                                then wrapInHtmlTag "a" [("href", "#" ++ anchor)] (show value)
+                                else show value
 
 wrapInHtmlSpan :: String -> String -> String
-wrapInHtmlSpan xs cssClass = "<span class=\"" ++ cssClass ++ "\">" ++ xs ++ "</span>"
+wrapInHtmlSpan xs cssClass = wrapInHtmlTag "span" [("class", cssClass)] xs
 
 generateStatisticsHeader :: FilePath -> Int -> Int -> String
-generateStatisticsHeader = printf "<h1>%s</h1>\n<p>Known words: %dK, target words: %dK.</p>"
+generateStatisticsHeader =
+        printf "<h1>%s</h1>\n<p>Known words: %dK, target words: %dK.</p>"
