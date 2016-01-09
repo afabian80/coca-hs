@@ -40,7 +40,7 @@ generateWordListSection :: String -> String -> Set.Set String -> String
 generateWordListSection sectionName anchor wordSet =
         wrapInHtmlTag "h1" [] headerText ++ wrapHtmlOrderedList listText
         where
-                headerText = wrapInHtmlTag "a" [("sectionName", anchor)] "" ++ sectionName
+                headerText = wrapInHtmlTag "a" [("name", "\"" ++ anchor ++ "\"")] "" ++ sectionName
                 listText = unlines $ map (wrapHtmlListItem . lowerWord) listEntries
                 listEntries = Set.toAscList wordSet
                 wrapHtmlOrderedList = wrapInHtmlTag "ol" []
@@ -53,16 +53,17 @@ generateTable ds = wrapInHtmlTag "table" [] (unlines (map tableDataToString ds))
 
 tableDataToString :: TableData -> String
 tableDataToString (TableRow name value allWords style anchor) =
-        "<tr><td class=\"" ++ style ++ "\">"
-        ++ name
-        ++ "</td><td class=\"stat\">"
-        ++ (if (not . null) anchor then "<a href=\"#" ++ anchor ++ "\">" else "")
-        ++ show value
-        ++ (if (not . null) anchor then "</a>" else "")
-        ++ "</td><td class=\"stat\">"
-        ++ printf "%6.2f" (percent * 100.0)
-        ++ " %</td></tr>"
+        wrapInHtmlTag "tr" [] tableRowText
         where
+                tableRowText =
+                        wrapInHtmlTag "td" [("class", style)] name
+                        ++ "<td class=\"stat\">"
+                        ++ (if (not . null) anchor then "<a href=\"#" ++ anchor ++ "\">" else "")
+                        ++ show value
+                        ++ (if (not . null) anchor then "</a>" else "")
+                        ++ "</td><td class=\"stat\">"
+                        ++ printf "%6.2f" (percent * 100.0)
+                        ++ " %</td>"
                 percent :: Double
                 percent = fromIntegral value / fromIntegral allWords
 
