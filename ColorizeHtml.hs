@@ -53,6 +53,7 @@ processRecurse _ _ [] = []
 processRecurse doChange categories text@(x:xs)
         | isAlpha x = colorize doChange (takeWhile isAlpha text) categories ++ processRecurse doChange categories (dropWhile isAlpha text)
         | x == '<' = x : takeWhile (/= '>') xs ++ processRecurse updatedDoChange categories (dropWhile (/= '>') xs)
+        | x == '&' = x : takeWhile (/= ';') xs ++ processRecurse updatedDoChange categories (dropWhile (/= ';') xs)
         | otherwise = x : processRecurse doChange categories xs
         where
                 updatedDoChange = doChange || "body " `isPrefixOf` xs || "body>" `isPrefixOf` xs
