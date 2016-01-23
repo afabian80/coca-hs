@@ -26,4 +26,4 @@ colorizeRecurse doChange text@(x:xs)
                 updatedDoChange = doChange || "body " `isPrefixOf` xs || "body>" `isPrefixOf` xs
 
 decorate :: Bool -> String -> String
-decorate doChange text = if doChange then "(" ++ text ++ ")" else text
+decorate doChange text = if doChange then "<span style=\"background-color:LightGreen;\">" ++ text ++ "</span>" else text

@@ -1,4 +1,4 @@
-import           ColorizeText       (InputType, processInputFile)
+import           ColorizeHtml       (InputType, processInputFile)
 import           System.Environment (getArgs)
 import           System.Exit        (die)
 
