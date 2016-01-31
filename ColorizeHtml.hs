@@ -4,7 +4,7 @@ import qualified Data.Set           as Set
 import           ColorizeCommon     (isWordInCategory,
                                      loadSetFromRange,
                                      tokenize)
-import           Data.Char          (toUpper, isAlpha)
+import           Data.Char          (toUpper, toLower, isAlpha)
 import           System.Directory   (getDirectoryContents)
 import           System.Posix.Files (getFileStatus, isRegularFile)
 import           Text.Printf        (printf)
@@ -41,9 +41,46 @@ processInputFile inputFile inputType knownBoundary targetBoundary = do
         putStrLn "Colorizing input based on given boundaries..."
 
         let colorizedText = process categories inputText
-        let outputFilename = "index.html"
-        writeFile outputFilename colorizedText
-        putStrLn (printf "Done. Output written to %s" outputFilename)
+        let htmlOutputFilename = "index.html"
+        writeFile htmlOutputFilename colorizedText
+        putStrLn (printf "Html output written to %s" htmlOutputFilename)
+
+        let studyList = collectStudyList toBeKnownWordsInInput False [] inputText
+        let wordsOutputFilename = "greenwords.txt"
+        writeFile wordsOutputFilename (unwords studyList)
+        putStrLn (printf "Green words written to %s" wordsOutputFilename)
+
+
+
+collectStudyList :: Set.Set String -> Bool -> [String] -> String -> [String]
+collectStudyList _ _ list [] = list
+collectStudyList greenWords inBody results text@(x:xs)
+        | isAlpha x = if inBody && Set.member (map toUpper aWord) greenWords
+                then collectStudyList greenWords inBody (registerWord aWord results) (dropWhile isAlpha text)
+                else collectStudyList greenWords inBody results (dropWhile isAlpha text)
+        | x == '<' = collectStudyList greenWords updatedInBody results (dropWhile (/= '>') xs)
+        | x == '&' = collectStudyList greenWords inBody results (dropWhile (/= ';') xs)
+        | otherwise = collectStudyList greenWords inBody results xs
+        where
+                aWord = takeWhile isAlpha text
+                updatedInBody = inBody || "body " `isPrefixOf` xs || "body>" `isPrefixOf` xs
+
+registerWord :: String -> [String] -> [String]
+registerWord aWord list =
+        if lowerWord `elem` list
+                then increaseWordCount lowerWord list
+                else addOnce lowerWord list
+        where
+                lowerWord = map toLower aWord
+
+addOnce :: String -> [String] -> [String]
+addOnce aWord list = aWord : list
+
+-- isWordInStudyList :: String -> [String] -> Bool
+-- isWordInStudyList = elem
+
+increaseWordCount :: String -> [String] -> [String]
+increaseWordCount _ list = list
 
 process :: [Set.Set String] -> String -> String
 process = processRecurse False
@@ -51,11 +88,12 @@ process = processRecurse False
 processRecurse :: Bool -> [Set.Set String] -> String -> String
 processRecurse _ _ [] = []
 processRecurse doChange categories text@(x:xs)
-        | isAlpha x = colorize doChange (takeWhile isAlpha text) categories ++ processRecurse doChange categories (dropWhile isAlpha text)
+        | isAlpha x = colorize doChange aWord categories ++ processRecurse doChange categories (dropWhile isAlpha text)
         | x == '<' = x : takeWhile (/= '>') xs ++ processRecurse updatedDoChange categories (dropWhile (/= '>') xs)
         | x == '&' = x : takeWhile (/= ';') xs ++ processRecurse updatedDoChange categories (dropWhile (/= ';') xs)
         | otherwise = x : processRecurse doChange categories xs
         where
+                aWord = takeWhile isAlpha text
                 updatedDoChange = doChange || "body " `isPrefixOf` xs || "body>" `isPrefixOf` xs
 
 colorize :: Bool -> String -> [Set.Set String] -> String
