@@ -8,7 +8,7 @@ import           Data.Char          (toUpper, toLower, isAlpha)
 import           System.Directory   (getDirectoryContents)
 import           System.Posix.Files (getFileStatus, isRegularFile)
 import           Text.Printf        (printf)
-import Data.List (isPrefixOf)
+import Data.List (isPrefixOf, sort, intercalate)
 
 data InputType = Text | Html deriving (Show, Read)
 
@@ -46,9 +46,14 @@ processInputFile inputFile inputType knownBoundary targetBoundary = do
         putStrLn (printf "Html output written to %s" htmlOutputFilename)
 
         let studyList = collectStudyList toBeKnownWordsInInput False [] inputText
-        let wordsOutputFilename = "greenwords.txt"
-        writeFile wordsOutputFilename (unwords studyList)
-        putStrLn (printf "Green words written to %s" wordsOutputFilename)
+        let studyListFilename = "greenwords.txt"
+        writeFile studyListFilename (intercalate "\n" (sort studyList))
+        putStrLn (printf "Green words written to %s" studyListFilename)
+
+        let omitList = collectStudyList ignoredWordsInInput False [] inputText
+        let omitListFilename = "redwords.txt"
+        writeFile omitListFilename (intercalate "\n" (sort omitList))
+        putStrLn (printf "Red words written to %s" omitListFilename)
 
 
 
