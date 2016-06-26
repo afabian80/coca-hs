@@ -17,3 +17,5 @@ cabal.sandbox.config
 /index.html
 /colorize
 /*.htmlz
+/redwords.txt
+/greenwords.txt
