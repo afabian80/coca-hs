@@ -1,4 +1,4 @@
-module ColorizeHtml (processInputFile, InputType) where
+module ColorizeHtml (processInputFile) where
 
 import qualified Data.Set           as Set
 import           ColorizeCommon     (isWordInCategory,
@@ -10,13 +10,10 @@ import           System.Posix.Files (getFileStatus, isRegularFile)
 import           Text.Printf        (printf)
 import Data.List (isPrefixOf, sort, intercalate)
 
-data InputType = Text | Html deriving (Show, Read)
 
-
-processInputFile :: FilePath -> InputType -> Int -> Int -> IO ()
-processInputFile inputFile inputType knownBoundary targetBoundary = do
+processInputFile :: FilePath -> Int -> Int -> IO ()
+processInputFile inputFile knownBoundary targetBoundary = do
         putStrLn "Loading database and input files..."
-        print inputType
 
         let dbDir = "cocadb"
         dbFileNames <- getDirectoryContents dbDir
