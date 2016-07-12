@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/afabian80/coca-hs.svg?branch=master)](https://travis-ci.org/afabian80/coca-hs)
+
 # coca-hs
 Coca analysis in Haskell
 
