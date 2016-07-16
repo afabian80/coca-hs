@@ -7,13 +7,16 @@ echo "Collecting word statistics"
 INPUT=greenwords.txt
 OUTPUT=occurences.txt
 CONSOLIDATED=consolidated.txt
-#NUM=$(wc -l $INPUT)
+NUM=$(wc -l < $INPUT | tr -d ' ')
 
 rm -f $OUTPUT
 
+iter=0
+
 # Find occurences and root for each word
 for WORD in `cat $INPUT`; do
-    echo -n "."
+    let "iter++"
+    echo -ne "\r${iter}/${NUM}"
     OCC=$(grep -ciw $WORD index.html)
     BASEWORD=$(grep -Riw -B 50 $WORD cocadb-indented | grep -iE "txt-\w|txt:\w" | tail -n1 | egrep -iEo "(\w+) ")
     echo -e "$WORD\t$BASEWORD\t$OCC" >> $OUTPUT
