@@ -19,3 +19,4 @@ cabal.sandbox.config
 /*.htmlz
 /redwords.txt
 /greenwords.txt
+/stats.txt
