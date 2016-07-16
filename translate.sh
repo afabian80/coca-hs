@@ -17,10 +17,13 @@ echo "Translating words..."
 while read line; do
     # get the text in the bracket
     WORDS=$(echo $line | cut -d '(' -f2 | cut -d ')' -f1)
+    # get translation
     TRANSLATION=$(echo $line | cut -d '=' -f2)
+    # get occurances
+    OCC=$(echo $line | cut -d ' ' -f2)
     for word in $WORDS; do
         echo "Translating $word"
-        /usr/bin/sed -ie "s/[[:<:]]$word[[:>:]]/$word ($TRANSLATION)/g" $INPUT
+        /usr/bin/sed -ie "s/[[:<:]]$word[[:>:]]/$word ($TRANSLATION x$OCC)/g" $INPUT
         echo ""
     done
 done < $DICT
