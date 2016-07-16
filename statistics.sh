@@ -12,7 +12,7 @@ CONSOLIDATED=consolidated.txt
 rm -f $OUTPUT
 
 # Find occurences and root for each word
-for WORD in `head -n 20 $INPUT`; do
+for WORD in `cat $INPUT`; do
     echo -n "."
     OCC=$(grep -ciw $WORD index.html)
     BASEWORD=$(grep -Riw -B 50 $WORD cocadb-indented | grep -iE "txt-\w|txt:\w" | tail -n1 | egrep -iEo "(\w+) ")
