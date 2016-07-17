@@ -1,0 +1,14 @@
+1. Usa the Haskell program to colorize a book and collect green and red words form it:
+    runhaskell Main.hs html-samples/<dir>/index.html 6 8
+2. Collect red and green word occurencies in the input:
+    ./statistics.sh redwords.txt
+    ./statistics.sh greenwords.txt
+3. Copy output of these command to the Google Sheet (Translate Words)
+4. Copy "Output" column to a text file (e.g. green-stats.txt)
+5. Translate words in the original text:
+    ./translate.sh dictionaries/sth-green.txt index.html
+    ./translate.sh dictionaries/sth-red.txt index.html
+
+Bugs:
+ - The sed command in translate.sh does not replace uppercase words
+ - sed generates input.htmle for some reason
