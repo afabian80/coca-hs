@@ -2,9 +2,16 @@
 
 # Commands are for OS X v10.11.5
 
+if [ $# != 1 ];
+then
+    echo "Error: Argument mismatch!"
+    echo "Usage: $0 <word-list-file>"
+    exit 1
+fi
+
 echo "Collecting word statistics"
 
-INPUT=greenwords.txt
+INPUT=$1
 OUTPUT=occurences.txt
 CONSOLIDATED=consolidated.txt
 NUM=$(wc -l < $INPUT | tr -d ' ')
