@@ -24,6 +24,5 @@ while read line; do
     for word in $WORDS; do
         echo "Translating $word"
         /usr/bin/sed -ie "s/[[:<:]]$word[[:>:]]/$word ($TRANSLATION $OCC)/g" $INPUT
-        echo ""
     done
 done < $DICT
