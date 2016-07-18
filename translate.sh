@@ -23,6 +23,7 @@ while read line; do
     OCC=$(echo $line | cut -d ' ' -f2)
     for word in $WORDS; do
         echo "Translating $word"
-        /usr/bin/sed -ie "s/[[:<:]]$word[[:>:]]/$word ($TRANSLATION $OCC)/g" $INPUT
+        # using GNU sed command (for case insensitive replace)
+        sed -i "s/\b\($word\)\b/\1 ($TRANSLATION $OCC)/gI" $INPUT
     done
 done < $DICT
