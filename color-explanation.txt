@@ -1,0 +1,34 @@
+<h1>Explaining the colors</h1>
+<p>This book is colorized for easier reading. The meaning of the colors are the following:</p>
+<table border=1 cellpadding=10>
+    <tr>
+        <th>Color</th>
+        <th>Meaning</th>
+    </tr>
+    <tr>
+        <td>No color</span></td>
+        <td>Words from the 1K, 2K, ... 6K blocks of the BNC-COCA 25K frequency list</td>
+    </tr>
+    <tr>
+        <td><span style="background-color:LightGreen;">Green</span></td>
+        <td>Words from the 7K and 8K blocks of the BNC-COCA 25K frequency list</td>
+    </tr>
+    <tr>
+        <td><span style="background-color:Salmon;">Red</span></td>
+        <td>Words from the 9K, 10K, ... 25K of the BNC-COCA 25K frequency list</td>
+    </tr>
+    <tr>
+        <td><span style="background-color:LightGrey;">Grey</span></td>
+        <td>Words not found in the BNC-COCA 25K frequency list</td>
+    </tr>
+</table>
+<p>Furthermore, green and red words also have their Hungarian translation and the number of their occurrencies in the whole book in paranthesis.</p>
+<p>Ultimately, these are the advantages of the coloring and translation:</p>
+<ul>
+    <li>You should know all the white words by heart. This colorized book just helps you practicing them. If you do not understand one, look it up in a dictionary.</li>
+    <li>You should try to keep the green words in mind, especially the ones with high occurrency number, because you will meet them many times in the book.</li>
+    <li>Red words can be ommitted for now, as they are quite rare in general, unless they are frequent in this specific book.</li>
+    <li>You can omit the grey words, because they were not even mentioned in the BNC-COCA frequency list containing 25 thousand headwords. They are usually person and place names, compound words and dirty words.
+    </li>
+</ul>
+<p>Enjoy reading this aided book, colorized for your actual progress in learning the BNC-COCA 25K frequency list!</p>
