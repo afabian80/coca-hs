@@ -1,4 +1,4 @@
-def f = new File("/Users/akos/Documents/Programming/Haskell/coca-hs/bw8.txt")
+def f = new File(args[0])
 
 def rootWord = ""
 def formedWords = [:]
