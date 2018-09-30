@@ -8,9 +8,9 @@ tokenize
 ,loadSetFromRange
 ) where
 
-import qualified Data.Set        as Set
 import           Data.Char       (isAlpha, toUpper)
 import           Data.List.Split (splitWhen)
+import qualified Data.Set        as Set
 import           Text.Printf     (printf)
 
 tokenize :: String -> Set.Set String

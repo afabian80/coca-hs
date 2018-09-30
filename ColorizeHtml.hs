@@ -1,14 +1,13 @@
 module ColorizeHtml (processInputFile) where
 
-import qualified Data.Set           as Set
-import           ColorizeCommon     (isWordInCategory,
-                                     loadSetFromRange,
+import           ColorizeCommon     (isWordInCategory, loadSetFromRange,
                                      tokenize)
-import           Data.Char          (toUpper, toLower, isAlpha)
+import           Data.Char          (isAlpha, toLower, toUpper)
+import           Data.List          (intercalate, isPrefixOf, sort)
+import qualified Data.Set           as Set
 import           System.Directory   (getDirectoryContents)
 import           System.Posix.Files (getFileStatus, isRegularFile)
 import           Text.Printf        (printf)
-import Data.List (isPrefixOf, sort, intercalate)
 
 
 processInputFile :: FilePath -> Int -> Int -> IO ()
