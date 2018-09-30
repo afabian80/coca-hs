@@ -1,5 +1,5 @@
-1. Usa the Haskell program to colorize a book and collect green and red words form it:
-    runhaskell Main.hs html-samples/<dir>/index.html 6 8
+1. Use the Haskell program to colorize a book and collect green and red words form it:
+    runhaskell Main.hs html-samples/TheSecretGarden.html 4 8
 2. Collect red and green word occurencies in the input:
     ./statistics.sh redwords.txt
     ./statistics.sh greenwords.txt
