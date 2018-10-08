@@ -50,6 +50,11 @@ GLINT 10 (glint glinted glinting )
 CRATE 10 (crate crates )
 BURROW 10 (burrow )
 BEAK 10 (beak beaked beaky )
+
+
+
+
+
 SHRILL 9 (shrill shrilly )
 PROTRUDE 9 (protruded protruding )
 NOSTRIL 9 (nostrils )
@@ -114,6 +119,8 @@ CLUMP 6 (clump )
 BANISH 6 (banish banished banishing )
 AUTOGRAPH 6 (autograph )
 ANTIDOTE 6 (antidote antidotes )
+
+
 WRENCH 5 (wrench wrenched )
 WHIZ 5 (whizzed whizzing )
 TROLL 5 (troll trolls )
